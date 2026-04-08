@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bjca8rnsplpjf"]
+
+[ext_resource type="Script" uid="uid://c0xr710re6may" path="res://Scripts/npc.gd" id="1_4rlr1"]
+[ext_resource type="PackedScene" uid="uid://bahvqkpnr3m6t" path="res://Scènes/Interactible.tscn" id="1_nqnoe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4rlr1"]
+
+[node name="Node2D" type="Node2D" unique_id=209340656]
+script = ExtResource("1_4rlr1")
+
+[node name="Area2D" parent="." unique_id=711194437 instance=ExtResource("1_nqnoe")]
+id = "character"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=986881763]
+sprite_frames = SubResource("SpriteFrames_4rlr1")
+
+[connection signal="give_item" from="Area2D" to="." method="_on_area_2d_give_item"]
+[connection signal="talk" from="Area2D" to="." method="_on_area_2d_talk"]

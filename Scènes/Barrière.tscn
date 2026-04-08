@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://t78woww7v4rd"]
+
+[ext_resource type="Script" uid="uid://d3d7eckedahto" path="res://Scripts/barrière.gd" id="1_se8rp"]
+[ext_resource type="Texture2D" uid="uid://c757r6gtgxhx4" path="res://assets/orange_bleu.png" id="2_se8rp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwo1x"]
+atlas = ExtResource("2_se8rp")
+region = Rect2(72, 72, 176, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se8rp"]
+atlas = ExtResource("2_se8rp")
+region = Rect2(312, 112, 176, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7q3fh"]
+atlas = ExtResource("2_se8rp")
+region = Rect2(552, 72, 176, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dt3t"]
+atlas = ExtResource("2_se8rp")
+region = Rect2(792, 112, 176, 176)
+
+[node name="Node2D" type="Node2D" unique_id=550575985]
+script = ExtResource("1_se8rp")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1864046814]
+vertices = PackedVector2Array(-74, -90, 69, -90, 69, 86, -75, 86)
+
+[node name="orange_levé" type="Sprite2D" parent="." unique_id=370834438]
+scale = Vector2(0.81, 0.81)
+texture = SubResource("AtlasTexture_iwo1x")
+
+[node name="orange_baissé" type="Sprite2D" parent="." unique_id=422160152]
+visible = false
+position = Vector2(0, 16.000002)
+scale = Vector2(0.81, 0.81)
+texture = SubResource("AtlasTexture_se8rp")
+
+[node name="bleu_levé" type="Sprite2D" parent="." unique_id=1631273651]
+visible = false
+scale = Vector2(0.81, 0.81)
+texture = SubResource("AtlasTexture_7q3fh")
+
+[node name="bleu_baissé" type="Sprite2D" parent="." unique_id=2124895684]
+visible = false
+position = Vector2(0, 16)
+scale = Vector2(0.81, 0.81)
+texture = SubResource("AtlasTexture_3dt3t")

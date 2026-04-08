@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://b5eu1fii16jax"]
+
+[ext_resource type="Script" uid="uid://c0xr710re6may" path="res://Scripts/npc.gd" id="1_j5qnr"]
+[ext_resource type="Script" uid="uid://d23jusyi3vv2" path="res://Scripts/interactible.gd" id="2_t4ts5"]
+[ext_resource type="Texture2D" uid="uid://dqfybhsqpswm7" path="res://assets/sprite_sheets/robot_idle.png" id="3_jeswn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jeswn"]
+radius = 224.00223
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0wnu"]
+atlas = ExtResource("3_jeswn")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4nd3"]
+atlas = ExtResource("3_jeswn")
+region = Rect2(1080, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcg07"]
+atlas = ExtResource("3_jeswn")
+region = Rect2(2160, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwc2p"]
+atlas = ExtResource("3_jeswn")
+region = Rect2(3240, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r3f3"]
+atlas = ExtResource("3_jeswn")
+region = Rect2(0, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xremn"]
+atlas = ExtResource("3_jeswn")
+region = Rect2(1080, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jbl5"]
+atlas = ExtResource("3_jeswn")
+region = Rect2(2160, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kguo3"]
+atlas = ExtResource("3_jeswn")
+region = Rect2(3240, 1080, 1080, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hgnq0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0wnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4nd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcg07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwc2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r3f3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xremn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jbl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kguo3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=206621401]
+script = ExtResource("1_j5qnr")
+needed_item = "nails"
+needed_item2 = "null"
+dialogue1 = Array[String](["I came here for a little checkup, but...", "A giant rock just fell down and broke the bridge.", "I could repair it but I would need some nails.", "So, unless you got some, the path is blocked.", "Do you have any nails by any chance?"])
+dialogue2 = Array[String](["Perfect! Just what I needed!", "Step back and watch that!"])
+dialogue3 = Array[String](["Not my best work but it won't break!", "Unless another rock falls down...", "I'll be honest that was exhausting.", "I'll rest there for a moment."])
+dialogue_not_for_me = Array[String](["No thanks, I don't need that."])
+
+[node name="Area2D" type="Area2D" parent="." unique_id=969228658]
+collision_layer = 2
+script = ExtResource("2_t4ts5")
+id = "character"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1416633928]
+shape = SubResource("CircleShape2D_jeswn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=567526792]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_hgnq0")
+autoplay = "default"
+frame = 2
+frame_progress = 0.034290172
+offset = Vector2(18.67, -228.395)
+
+[connection signal="give_item" from="Area2D" to="." method="_on_area_2d_give_item"]
+[connection signal="talk" from="Area2D" to="." method="_on_area_2d_talk"]

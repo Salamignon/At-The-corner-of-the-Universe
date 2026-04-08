@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dc2csxxg0v53i"]
+
+[ext_resource type="Script" uid="uid://c0xr710re6may" path="res://Scripts/npc.gd" id="1_r8b6e"]
+[ext_resource type="Script" uid="uid://d23jusyi3vv2" path="res://Scripts/interactible.gd" id="2_mmxyv"]
+[ext_resource type="Texture2D" uid="uid://b8288wyrrpg4a" path="res://assets/happymask.png" id="3_mmxyv"]
+[ext_resource type="Script" uid="uid://ci1xv31m3h4x3" path="res://Scripts/bounce_myself.gd" id="4_htkh5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_htkh5"]
+radius = 139.51703
+
+[node name="Happy_mask" type="Node2D" unique_id=1059355803]
+script = ExtResource("1_r8b6e")
+needed_item = "null"
+needed_item2 = "null"
+item_to_give = "nails"
+dialogue1 = Array[String](["Hi there! In need of something? I got everything you want!", "Tell me what you're looking for!", "Nails? Of course I got some! And you know what? I'll give you a first time discount, they're totally free for you !"])
+dialogue3 = Array[String](["It was a pleasure doing business with you! But if you come back, just remember that it won't be free anymore.", "Anyway, why did you come  here for? Searching for the nymph, am I right? Well, good luck for that!"])
+dialogue_not_for_me = Array[String](["Hey! I'm the one selling things to people!"])
+
+[node name="Area2D" type="Area2D" parent="." unique_id=686762189]
+collision_layer = 2
+script = ExtResource("2_mmxyv")
+id = "character"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2127401572]
+shape = SubResource("CircleShape2D_htkh5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1312871468]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_mmxyv")
+offset = Vector2(0, -400.48)
+script = ExtResource("4_htkh5")
+
+[connection signal="give_item" from="Area2D" to="." method="_on_area_2d_give_item"]
+[connection signal="talk" from="Area2D" to="." method="_on_area_2d_talk"]

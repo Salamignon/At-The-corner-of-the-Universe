@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://coei1flnri84q"]
+
+[ext_resource type="PackedScene" uid="uid://b1pgbqwxulped" path="res://Scènes/Player.tscn" id="1_ddnx4"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ddnx4"]
+vertices = PackedVector2Array(170.64844, 172.14063, -4.140625, 294.39844, 280.53906, -149.95313, -213.92188, -30.898438, -503.7578, 16.757813, -330.22656, -176.17188, 309.03906, -463.89063, 274, -155.60938, -509.64063, -283.8203, -217.85156, 269.9297, 1101.2969, -309.21094, 887.84375, 278.28906, 553.60156, -25.023438, 386.9375, 288.21875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(5, 8, 6), PackedInt32Array(7, 9, 3), PackedInt32Array(10, 11, 12, 6), PackedInt32Array(7, 6, 12, 2), PackedInt32Array(0, 2, 12, 13)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-523, -286, 309, -469, 1108, -313, 890, 287, 555, -17, 389, 295, 171, 178, -22, 313, 274, -149, -223, 281, -219, -25, -517, 24, -338, -175)])
+agent_radius = 5.0
+
+[node name="Node2D" type="Node2D" unique_id=1747333255]
+
+[node name="CharacterBody2D" parent="." unique_id=1939621221 instance=ExtResource("1_ddnx4")]
+position = Vector2(1, -1)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1943850694]
+navigation_polygon = SubResource("NavigationPolygon_ddnx4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=126475551]
+position = Vector2(1, -1)

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bfudu65wpy26k"]
+
+[ext_resource type="Script" uid="uid://brsfpe61hk5ph" path="res://Scripts/item.gd" id="1_pxowt"]
+[ext_resource type="Script" uid="uid://d23jusyi3vv2" path="res://Scripts/interactible.gd" id="2_mkil7"]
+[ext_resource type="Texture2D" uid="uid://c757r6gtgxhx4" path="res://assets/orange_bleu.png" id="3_akly1"]
+[ext_resource type="AudioStream" uid="uid://dhmegjxvw7mp3" path="res://sounds/orbe.mp3" id="4_akly1"]
+[ext_resource type="AudioStream" uid="uid://deebsccqv6wbq" path="res://sounds/barrier_moving.mp3" id="5_bkw5o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fufni"]
+radius = 80.024994
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkw5o"]
+atlas = ExtResource("3_akly1")
+region = Rect2(184, 424, 224, 248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fufni"]
+atlas = ExtResource("3_akly1")
+region = Rect2(454, 424, 224, 248)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bkw5o"]
+random_pitch = 1.0905077
+streams_count = 1
+stream_0/stream = ExtResource("4_akly1")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_f0rc4"]
+random_pitch = 1.0594631
+streams_count = 1
+stream_0/stream = ExtResource("5_bkw5o")
+
+[node name="Node2D" type="Node2D" unique_id=676106946]
+script = ExtResource("1_pxowt")
+item_type = "crystal orb"
+look = Array[String](["This is a crystal orb.", "As you approach you hand to it, you feel static electricity.", "what a strange orb."])
+pickup_text = Array[String](["You try to lift the orb.", "But it's too heavy for you."])
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2123718221]
+collision_layer = 2
+script = ExtResource("2_mkil7")
+id = "item"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2119718562]
+position = Vector2(0, -24)
+shape = SubResource("CircleShape2D_fufni")
+
+[node name="orange" type="Sprite2D" parent="." unique_id=1473316747]
+scale = Vector2(0.6, 0.6)
+texture = SubResource("AtlasTexture_bkw5o")
+offset = Vector2(0, -100)
+
+[node name="blue" type="Sprite2D" parent="." unique_id=1333183487]
+scale = Vector2(0.6, 0.6)
+texture = SubResource("AtlasTexture_fufni")
+offset = Vector2(0, -100)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1389555007]
+stream = SubResource("AudioStreamRandomizer_bkw5o")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1000393612]
+stream = SubResource("AudioStreamRandomizer_f0rc4")
+volume_db = -5.0
+
+[connection signal="interact" from="Area2D" to="." method="_on_area_2d_interact"]
+[connection signal="look_at" from="Area2D" to="." method="_on_area_2d_look_at"]
+[connection signal="pick_up" from="Area2D" to="." method="_on_area_2d_pick_up"]

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ct5bc5rk0ct8p"]
+
+[ext_resource type="Script" uid="uid://c0xr710re6may" path="res://Scripts/npc.gd" id="1_23qun"]
+[ext_resource type="Script" uid="uid://d23jusyi3vv2" path="res://Scripts/interactible.gd" id="2_wxh25"]
+[ext_resource type="Texture2D" uid="uid://bk27imkwoleuu" path="res://assets/reader.png" id="3_wxh25"]
+[ext_resource type="Script" uid="uid://ctdvchsocl7gw" path="res://Scripts/bounce.gd" id="4_q7yo7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q7yo7"]
+radius = 106.47065
+
+[node name="Node2D" type="Node2D" unique_id=710078292]
+script = ExtResource("1_23qun")
+needed_item = "book1"
+needed_item2 = "book2"
+item_to_give = "contact lens"
+dialogue1 = Array[String](["What do you want?", "The nymph? I don't know, I just came here for the books. I love reading.", "If you have the time, could you find me something about typology?"])
+dialogue2 = Array[String](["Great! Exactly what I was looking for.", "Now, could you find me something else?", "The books are free to take here, and I'd like to find something about dead languages."])
+dialogue3 = Array[String](["These books are really interesting! You should read some!"])
+dialogue4 = Array[String](["Great! Here's a little gift for your kindness.", "Take some contact lenses, that's all I have sorry."])
+dialogue_not_for_me = Array[String](["I'm not searching for that."])
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1276224518]
+collision_layer = 2
+script = ExtResource("2_wxh25")
+id = "character"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=815739999]
+shape = SubResource("CircleShape2D_q7yo7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=807717113]
+position = Vector2(7, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_wxh25")
+offset = Vector2(0, -160.875)
+script = ExtResource("4_q7yo7")
+
+[connection signal="give_item" from="Area2D" to="." method="_on_area_2d_give_item"]
+[connection signal="talk" from="Area2D" to="." method="_on_area_2d_talk"]

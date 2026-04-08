@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bahvqkpnr3m6t"]
+
+[ext_resource type="Script" uid="uid://d23jusyi3vv2" path="res://Scripts/interactible.gd" id="1_nupam"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cav5a"]
+radius = 155.32225
+
+[node name="Area2D" type="Area2D" unique_id=711194437]
+collision_layer = 2
+script = ExtResource("1_nupam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=293451048]
+shape = SubResource("CircleShape2D_cav5a")
+debug_color = Color(4.283637e-06, 0.6444629, 0.28651458, 0.41960785)

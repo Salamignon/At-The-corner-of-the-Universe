@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://coei1flnri84q"]
+
+[ext_resource type="Script" uid="uid://cvfrmuiijmq5" path="res://Scènes/CamLimit.gd" id="1_2m5xi"]
+[ext_resource type="PackedScene" uid="uid://b1pgbqwxulped" path="res://Scènes/Player.tscn" id="1_ddnx4"]
+[ext_resource type="PackedScene" uid="uid://bjca8rnsplpjf" path="res://Scènes/NPC.tscn" id="2_k3fg5"]
+[ext_resource type="PackedScene" uid="uid://mm3fxe5tbi12" path="res://Scènes/item.tscn" id="3_2sktj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sktj"]
+size = Vector2(1561, 1094)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2m5xi"]
+size = Vector2(1493, 1094)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ddnx4"]
+vertices = PackedVector2Array(-928.96094, -239.15625, 496.6875, -262.8203, 484.71094, 149.85156, -926.03906, 535, 1188.2266, 535, 775.4297, 154.14063, 1206.7578, -249.21094, 799.40625, -257.78906)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5), PackedInt32Array(6, 4, 5, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1217, -259, 1198, 545, 940, 545, -936, 545, -939, -249, 507, -273, 495, 140, 766, 144, 790, -268)])
+
+[node name="Node2D" type="Node2D" unique_id=1747333255]
+
+[node name="Area1Cam" type="Area2D" parent="." unique_id=1091906583]
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area1Cam" unique_id=1698047060]
+position = Vector2(-144.5, 0)
+shape = SubResource("RectangleShape2D_2sktj")
+
+[node name="Area2Cam" type="Area2D" parent="." unique_id=1259362558]
+position = Vector2(1552, 0)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(1400, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Cam" unique_id=663571591]
+position = Vector2(2.5, 0)
+shape = SubResource("RectangleShape2D_2m5xi")
+debug_color = Color(0.08076166, 0.64944166, 0, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=126475551]
+zoom = Vector2(0.7, 0.7)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1943850694]
+navigation_polygon = SubResource("NavigationPolygon_ddnx4")
+
+[node name="npc" parent="." unique_id=209340656 instance=ExtResource("2_k3fg5")]
+position = Vector2(-309, 207)
+dialogue = {
+"1": "i lost my key...",
+"2": "Hey! That's my key!",
+"3": "Thank you!",
+"4": null,
+"5": null
+}
+
+[node name="item" parent="." unique_id=453130203 instance=ExtResource("3_2sktj")]
+position = Vector2(79, 25)
+
+[node name="CharacterBody2D" parent="." unique_id=1939621221 instance=ExtResource("1_ddnx4")]
+position = Vector2(-829, 185)
+
+[connection signal="body_entered" from="Area1Cam" to="Area1Cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2Cam" to="Area2Cam" method="_on_body_entered"]
+[connection signal="finished_interacting" from="npc" to="CharacterBody2D" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="npc" to="CharacterBody2D" method="_on_node_2d_interacting"]
+[connection signal="item_to_player" from="item" to="CharacterBody2D" method="_on_item_item_to_player"]

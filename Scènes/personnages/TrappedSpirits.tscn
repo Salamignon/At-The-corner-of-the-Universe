@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://y8fahh155svi"]
+
+[ext_resource type="Script" uid="uid://c0xr710re6may" path="res://Scripts/npc.gd" id="1_ny3uv"]
+[ext_resource type="Script" uid="uid://d23jusyi3vv2" path="res://Scripts/interactible.gd" id="2_wxuxv"]
+[ext_resource type="Texture2D" uid="uid://bkvhfbfvskvsw" path="res://assets/sprite_sheets/trappedspirits_idle.png" id="3_wxuxv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b8u28"]
+radius = 186.6869
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8u28"]
+atlas = ExtResource("3_wxuxv")
+region = Rect2(0, 0, 1080, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flf6n"]
+atlas = ExtResource("3_wxuxv")
+region = Rect2(1080, 0, 1080, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qau2"]
+atlas = ExtResource("3_wxuxv")
+region = Rect2(2160, 0, 1080, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uabde"]
+atlas = ExtResource("3_wxuxv")
+region = Rect2(3240, 0, 1080, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjrlg"]
+atlas = ExtResource("3_wxuxv")
+region = Rect2(0, 1920, 1080, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6vi7"]
+atlas = ExtResource("3_wxuxv")
+region = Rect2(1080, 1920, 1080, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjfal"]
+atlas = ExtResource("3_wxuxv")
+region = Rect2(2160, 1920, 1080, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6kx6"]
+atlas = ExtResource("3_wxuxv")
+region = Rect2(3240, 1920, 1080, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3o2p"]
+atlas = ExtResource("3_wxuxv")
+region = Rect2(0, 3840, 1080, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq3lh"]
+atlas = ExtResource("3_wxuxv")
+region = Rect2(1080, 3840, 1080, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snupb"]
+atlas = ExtResource("3_wxuxv")
+region = Rect2(2160, 3840, 1080, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec77y"]
+atlas = ExtResource("3_wxuxv")
+region = Rect2(3240, 3840, 1080, 1920)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mdink"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8u28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flf6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qau2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uabde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjrlg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6vi7")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_jjfal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6kx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3o2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq3lh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snupb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec77y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1092606283]
+script = ExtResource("1_ny3uv")
+needed_item = "paper"
+needed_item2 = "null"
+dialogue1 = Array[String](["I came here on a pilgrimage to cleanse me of my sins.", "I participated in so many wars and did so many things...", "But don't worry, I'm a new person now."])
+dialogue2 = Array[String](["You want me to do that?", "I don't know, seems like a Bad Idea™, the floor is already struggling to support my weight.", "But if you really want me to break it."])
+dialogue_not_for_me = Array[String](["I do not need your gift.", "We don't even know each other."])
+
+[node name="Area2D" type="Area2D" parent="." unique_id=419576258]
+collision_layer = 2
+script = ExtResource("2_wxuxv")
+id = "character"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=560255530]
+shape = SubResource("CircleShape2D_b8u28")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1677823931]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_mdink")
+autoplay = "default"
+offset = Vector2(0, -550.97)
+
+[connection signal="give_item" from="Area2D" to="." method="_on_area_2d_give_item"]
+[connection signal="talk" from="Area2D" to="." method="_on_area_2d_talk"]

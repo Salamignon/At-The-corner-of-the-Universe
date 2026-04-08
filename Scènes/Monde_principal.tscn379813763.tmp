@@ -1,0 +1,1958 @@
+[gd_scene format=4 uid="uid://coei1flnri84q"]
+
+[ext_resource type="Script" uid="uid://cvfrmuiijmq5" path="res://Scripts/CamLimit.gd" id="1_2m5xi"]
+[ext_resource type="PackedScene" uid="uid://b1pgbqwxulped" path="res://Scènes/personnages/Player.tscn" id="1_ddnx4"]
+[ext_resource type="Script" uid="uid://d1spxchqaldpr" path="res://Scripts/monde_principal.gd" id="1_xxtmf"]
+[ext_resource type="Script" uid="uid://cnox162rrpavn" path="res://Scripts/transition.gd" id="2_nsbuw"]
+[ext_resource type="PackedScene" uid="uid://mm3fxe5tbi12" path="res://Scènes/item.tscn" id="3_2sktj"]
+[ext_resource type="Texture2D" uid="uid://bffspjkcjbbye" path="res://assets/forêt.png" id="3_fsijs"]
+[ext_resource type="Texture2D" uid="uid://hxud5arhsds5" path="res://assets/murs_temple.png" id="5_6ec1n"]
+[ext_resource type="PackedScene" uid="uid://ekogdtw1dssl" path="res://Scènes/personnages/botanist.tscn" id="5_life5"]
+[ext_resource type="Script" uid="uid://b0ykpqmnvatyb" path="res://Scripts/ticket.gd" id="5_pc7ah"]
+[ext_resource type="PackedScene" uid="uid://u6kxneqvuik3" path="res://Scènes/personnages/ticket_guy.tscn" id="5_t5gsb"]
+[ext_resource type="Texture2D" uid="uid://j5h2p2mggeuh" path="res://assets/ombre.png" id="6_hc0wr"]
+[ext_resource type="PackedScene" uid="uid://b5eu1fii16jax" path="res://Scènes/personnages/robot.tscn" id="10_wcyn6"]
+[ext_resource type="PackedScene" uid="uid://crd7qu5tlcbtm" path="res://Scènes/inventory.tscn" id="11_1fnmw"]
+[ext_resource type="Texture2D" uid="uid://dry3f8c1oxngo" path="res://assets/door.png" id="11_5mbm0"]
+[ext_resource type="Texture2D" uid="uid://psq71bxgjx8r" path="res://assets/pilier.png" id="12_5mbm0"]
+[ext_resource type="PackedScene" uid="uid://dawweys3f0eqv" path="res://Scènes/fade.tscn" id="12_rwuu8"]
+[ext_resource type="PackedScene" uid="uid://dc2csxxg0v53i" path="res://Scènes/personnages/Happy_mask.tscn" id="13_plnh7"]
+[ext_resource type="PackedScene" uid="uid://c6aoy71k36652" path="res://Scènes/personnages/JackBox.tscn" id="14_6nbd4"]
+[ext_resource type="PackedScene" uid="uid://dil34yip3jt8h" path="res://Scènes/personnages/shrodCat.tscn" id="14_v1xvq"]
+[ext_resource type="PackedScene" uid="uid://ct5bc5rk0ct8p" path="res://Scènes/personnages/Reader.tscn" id="15_ub5jd"]
+[ext_resource type="PackedScene" uid="uid://rtjeetqjods" path="res://Scènes/personnages/Knight.tscn" id="16_rmf57"]
+[ext_resource type="PackedScene" uid="uid://c7bj0bdbkhhv3" path="res://Scènes/personnages/Sad_mask.tscn" id="17_wcyn6"]
+[ext_resource type="PackedScene" uid="uid://y8fahh155svi" path="res://Scènes/personnages/TrappedSpirits.tscn" id="18_5equv"]
+[ext_resource type="PackedScene" uid="uid://bfudu65wpy26k" path="res://Scènes/interrupteur.tscn" id="19_plnh7"]
+[ext_resource type="Texture2D" uid="uid://bs4w3pku2fqr8" path="res://assets/items.png" id="20_f4lsy"]
+[ext_resource type="PackedScene" uid="uid://bjhkuisl0xjaw" path="res://Scènes/personnages/SrElrick.tscn" id="21_vpo30"]
+[ext_resource type="Texture2D" uid="uid://c67b5iqvr1cf1" path="res://assets/entree_temple_front.png" id="24_s14fl"]
+[ext_resource type="Texture2D" uid="uid://cd51ssalk3f6i" path="res://assets/entree_temple_back.png" id="25_f4lsy"]
+[ext_resource type="PackedScene" uid="uid://t78woww7v4rd" path="res://Scènes/Barrière.tscn" id="28_pyf7s"]
+[ext_resource type="Texture2D" uid="uid://byp1tgonrmaxs" path="res://assets/structures.png" id="29_5ixym"]
+[ext_resource type="PackedScene" uid="uid://dxrg7ydn4ud0v" path="res://Scènes/Platform.tscn" id="30_q7a8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ixym"]
+size = Vector2(3118, 2433)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7a8t"]
+size = Vector2(10425, 5938)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mbm0"]
+size = Vector2(1062, 1060)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1xvq"]
+size = Vector2(105, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sktj"]
+size = Vector2(1561, 1094)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2m5xi"]
+size = Vector2(1079, 526)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_life5"]
+size = Vector2(159, 227)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2b23"]
+size = Vector2(394, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxtmf"]
+size = Vector2(2002, 860)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ec1n"]
+size = Vector2(1252, 836)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcyn6"]
+size = Vector2(1451, 836)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3syr"]
+size = Vector2(1667, 738)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plnh7"]
+size = Vector2(1946, 1364)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nbd4"]
+size = Vector2(1605, 930)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ub5jd"]
+size = Vector2(1708, 1246)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmf57"]
+size = Vector2(889, 960)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpo30"]
+size = Vector2(1334, 760)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5equv"]
+size = Vector2(1334, 670.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4lsy"]
+size = Vector2(1380, 960)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s14fl"]
+size = Vector2(1776, 711)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsbuw"]
+size = Vector2(1513, 762)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pyf7s"]
+size = Vector2(592, 863)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anofh"]
+size = Vector2(671, 452)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx5o5"]
+size = Vector2(671, 870)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hiri5"]
+size = Vector2(887, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5i72"]
+size = Vector2(781, 1336)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvpnm"]
+size = Vector2(685, 844)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7gma"]
+size = Vector2(1162, 1083)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hmaf"]
+size = Vector2(1450, 778)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vs63"]
+size = Vector2(1244, 594)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbs1r"]
+size = Vector2(1244, 594)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_naetd"]
+size = Vector2(1359, 616)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50jmu"]
+size = Vector2(1359, 616)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4acg"]
+size = Vector2(1359, 575)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5mbm0"]
+vertices = PackedVector2Array(484.02344, 1335.0391, 359.22656, 1285.9609, 818.8281, 1103.8438, 1538.5625, 1363.9531, 1074.9375, 920.1797, 1606.5234, 713.0625, 1689, 846.46094, 1848.8828, 1263.7188, 1546.5703, 316.07813, 1729, 340.90625, 1643.4297, 491.60938, 1188.4766, 515.0703, 1808.1406, -16.703125, 1976.5234, -32, 1974.2969, 20.507813, 1901.4922, 42.921875, 1837.6094, 88.828125, 1500.0469, 182.21094, 1077.9609, 675.1719, 1002.8281, -64.42969, 1224.6172, -136.34375, 1539.8438, -213.17188, 1049.3203, 402, 797.6328, 141.79688, 862.52344, -18.929688, -234.28906, 520.97656, -903.0078, 419.39063, -903.9922, -78.03906, -674.34375, -252.21875, -311.64844, -276.65625, -185.75781, -113.09375, 116.74219, -41.492188, 193.39063, -7.359375, 283.53906, 143.35938, 657.5703, 509.0078, 479.47656, 131.17188, 611.96094, 212.07813)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(12, 15, 16, 17), PackedInt32Array(5, 4, 18, 11, 10), PackedInt32Array(19, 20, 21, 12, 17, 22, 23, 24), PackedInt32Array(25, 26, 27, 28, 29, 30), PackedInt32Array(25, 30, 31, 32, 33), PackedInt32Array(34, 25, 33, 35, 36), PackedInt32Array(22, 34, 36, 23), PackedInt32Array(17, 8, 11, 22)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1906, 52, 1842, 98, 1513, 189, 1554, 307, 1745, 333, 1653, 495, 1617, 711, 1698, 842, 1862, 1270, 1540, 1374, 482, 1345, 332, 1286, 814, 1095, 1065, 915, 1068, 672, 1175, 517, 1047, 413, 659, 519, -235, 531, -913, 428, -914, -83, -678, -262, -307, -287, -180, -122, 120, -51, 200.33835, -15.216064, 289, 133, 482, 121, 613, 201, 790, 134, 855, -27, 999.747, -73.93436, 1222, -146, 1542, -224, 1811, -27, 1987, -43, 1984, 28)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5ixym"]
+vertices = PackedVector2Array(8277.789, -170.52344, 8159.6094, -281.59375, 8391.93, -287.2422, 5490.5, 1076.7969, 5537.8906, 1075.3203, 5536.0938, 1257.9922, 5428.4063, 1212, 3560.0938, 1256.0078, 5225.328, 1212, 4711.883, 991.90625, 5167.3125, 995.9297, 4569.9297, 993.0469, 2254.7813, 163.49219, 2251.2422, 12.96875, 4114.9766, 8.0234375, 2521.2031, 177.35938, 2568.0703, 310, 3569.1016, 310, 4113.992, 990.9531, 7031.25, 34.398438, 7642, 32.03125, 7642, 288.97656, 6985.7266, 207.92969, 4720.117, 284.9922, 6855.5234, 209.07031, 6804.8984, 35.257813, 6347.1563, 37.039063, 5700.961, -278.92188, 6342.1484, -283.92188, 8572.031, 282.8672, 8088, 277.10938, 8088, 193.92969, 8290.297, 83.78125, 8579.961, -1875, 8397.07, -1005.96094, 5219.883, -1876.9922, 5704.039, -1016.03906, 5201.8906, -281.03125, 4578.922, -279.03125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(6, 5, 7, 8), PackedInt32Array(9, 10, 8, 7, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(16, 15, 14, 17), PackedInt32Array(17, 14, 18, 7), PackedInt32Array(19, 20, 21, 22), PackedInt32Array(22, 21, 23, 24), PackedInt32Array(25, 24, 23, 26), PackedInt32Array(27, 28, 26, 23), PackedInt32Array(29, 30, 31, 32), PackedInt32Array(29, 32, 0, 2), PackedInt32Array(33, 29, 2, 34), PackedInt32Array(35, 33, 34, 36), PackedInt32Array(37, 35, 36, 27), PackedInt32Array(37, 27, 23, 38), PackedInt32Array(11, 38, 23, 9), PackedInt32Array(11, 7, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(2245, 173, 2514, 187, 2561, 320, 3559, 320, 3550, 1266, 5546, 1268, 5548, 1065, 5484, 1067, 5422, 1202, 5233, 1202, 5175, 986, 4722, 982, 4730, 295, 7652, 299, 7652, 22, 7023.529, 24.426514, 6978, 198, 6863, 199, 6812.398, 25.2417, 6357, 27, 6352, -294, 5711, -289, 5714, -1006, 8387, -996, 8382, -297, 8135, -291, 8268, -166, 8280, 78, 8078, 188, 8078, 287, 8582, 293, 8590, -1885, 5210, -1887, 5192, -291, 4569, -289, 4560, 983, 4124, 981, 4125, -2, 2241, 3)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_q7a8t"]
+vertices = PackedVector2Array(10908.6875, 1280.25, 11440.469, 1401.6563, 11776.539, 1498.3828, 11776.93, 1554.9766, 10149.008, 1552, 10661.523, 1306, 6793, 1250.9609, 6287, 1252.9609, 6287, 980.0078, 6970.9688, 980.97656, 6968.9766, 1962.0234, 6793, 2200, 11097, 2574.1719, 11097, 2842.0078, 9694.953, 2843.9766, 10913.367, 2551.25, 9691.953, 2202.0078, 10135.93, 2283.8594, 8073.8594, 1959.9766, 8082.8594, 1306, 8169.1016, 1306, 8198.023, 1343.9688, 11089.781, 1047, 11417.617, 1047, 9800.648, 1696.8906, 9850.406, 1957.3203, 9442, 1757, 9458, 1715, 9639.57, 1346, 9664.344, 1306, 9395, 1864, 8522.25, 1346.0313, 8836, 1671, 8817, 1701, 10137.773, 2022.0078, 10993.211, 995, 11072.57, 995, 9434, 1683, 9316.523, 1346, 9290.992, 1306, 9392, 1689, 8940, 1672, 9137.398, 1348.0234, 8549.617, 1306, 8790.719, 1306, 8806.0625, 1346.9766, 9156.742, 1306, 8834, 1749, 8850.289, 1800.7344, 8834, 1927, 10316.961, 2305.9766, 10795.93, 2308.5781, 7830.8125, 2046.0469, 7879.2266, 1960.3281, 8954, 1970, 7432.0938, 1961.1563, 7485.5625, 2042.9531, 9061, 1858, 10296.141, 2286.0313)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(6, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(15, 14, 16, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(22, 23, 1, 0), PackedInt32Array(24, 25, 26, 27, 28, 29), PackedInt32Array(30, 26, 25, 17), PackedInt32Array(18, 21, 31, 32, 33), PackedInt32Array(25, 34, 17), PackedInt32Array(0, 35, 36, 22), PackedInt32Array(29, 5, 4, 24), PackedInt32Array(28, 27, 37, 38), PackedInt32Array(39, 38, 37, 40, 41, 42), PackedInt32Array(43, 44, 45, 32, 31), PackedInt32Array(42, 46, 39), PackedInt32Array(45, 42, 41, 32), PackedInt32Array(18, 33, 47, 48, 49), PackedInt32Array(50, 51, 15), PackedInt32Array(16, 52, 53, 18, 54), PackedInt32Array(10, 55, 56, 11), PackedInt32Array(16, 11, 56, 52), PackedInt32Array(54, 57, 30, 17, 16), PackedInt32Array(17, 58, 50), PackedInt32Array(18, 49, 54), PackedInt32Array(15, 17, 50)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(6277, 970, 6277, 1263, 6783, 1261, 6783, 2210, 9682, 2212, 9685, 2854, 11107, 2852, 11107, 2565.3552, 10920, 2542, 10802.22, 2298.6133, 10321, 2296, 10300.222, 2276.0862, 10146, 2274, 10147.826, 2014.0128, 9859, 1949, 9812, 1703, 10151, 1562, 11787, 1565, 11786.488, 1490.8331, 11450, 1394, 11424.835, 1003.4736, 11416, 1037, 11097, 1037, 11079.79, 985.0001, 10985.744, 985.00006, 10901, 1271, 10661, 1296, 9658.762, 1296, 9634, 1336, 9322, 1336, 9296.472, 1296, 9150.342, 1296, 9131, 1338, 8813, 1337, 8797.658, 1296, 8544.3545, 1296, 8517, 1336, 8203, 1334, 8174.0596, 1296, 8073, 1296, 8064, 1950, 7873.3867, 1950.3513, 7825, 2036, 7491, 2033, 7437.5024, 1951.1549, 6979, 1952, 6981, 971)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_pyf7s"]
+vertices = PackedVector2Array(6285.039, 1199.2813, 5533.9375, 1221.6875, 5533.047, 1053.4531, 6285.9375, 1011.5703)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(5523, 1044, 6296, 1001, 6295, 1209, 5524, 1232)])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anofh"]
+atlas = ExtResource("29_5ixym")
+region = Rect2(1176, 632, 632, 216)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ec1n"]
+texture = ExtResource("5_6ec1n")
+margins = Vector2i(1, 281)
+texture_region_size = Vector2i(320, 321)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hc0wr"]
+tile_size = Vector2i(320, 321)
+custom_data_layer_0/name = "shadow"
+custom_data_layer_0/type = 0
+sources/0 = SubResource("TileSetAtlasSource_6ec1n")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hc0wr"]
+texture = ExtResource("6_hc0wr")
+texture_region_size = Vector2i(320, 320)
+0:1/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_v1xvq"]
+tile_size = Vector2i(320, 320)
+sources/0 = SubResource("TileSetAtlasSource_hc0wr")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_life5"]
+atlas = ExtResource("3_fsijs")
+region = Rect2(1576, 544, 320, 504)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5gsb"]
+atlas = ExtResource("3_fsijs")
+region = Rect2(768, 480, 344, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsijs"]
+atlas = ExtResource("3_fsijs")
+region = Rect2(1160, 464, 328, 592)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hiri5"]
+atlas = ExtResource("29_5ixym")
+region = Rect2(176, 48, 608, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx5o5"]
+atlas = ExtResource("29_5ixym")
+region = Rect2(16, 72, 120, 232)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5i72"]
+atlas = ExtResource("29_5ixym")
+region = Rect2(648, 400, 400, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvpnm"]
+atlas = ExtResource("11_5mbm0")
+region = Rect2(1152, 248, 624, 688)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7gma"]
+atlas = ExtResource("11_5mbm0")
+region = Rect2(224, 208, 600, 688)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5equv"]
+atlas = ExtResource("20_f4lsy")
+region = Rect2(104, 104, 360, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s14fl"]
+atlas = ExtResource("20_f4lsy")
+region = Rect2(552, 176, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsbuw"]
+atlas = ExtResource("20_f4lsy")
+region = Rect2(624, 800, 192, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyf7s"]
+atlas = ExtResource("20_f4lsy")
+region = Rect2(552, 616, 184, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ixym"]
+atlas = ExtResource("20_f4lsy")
+region = Rect2(504, 400, 288, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7a8t"]
+atlas = ExtResource("20_f4lsy")
+region = Rect2(208, 536, 240, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pc7ah"]
+size = Vector2(48, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fnmw"]
+atlas = ExtResource("3_fsijs")
+region = Rect2(88, 392, 608, 424)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3syr"]
+atlas = ExtResource("3_fsijs")
+region = Rect2(88, 392, 608, 408)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ec1n"]
+atlas = ExtResource("3_fsijs")
+region = Rect2(72, 904, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc0wr"]
+atlas = ExtResource("3_fsijs")
+region = Rect2(208, 904, 120, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1xvq"]
+atlas = ExtResource("3_fsijs")
+region = Rect2(360, 920, 104, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcyn6"]
+atlas = ExtResource("3_fsijs")
+region = Rect2(480, 888, 264, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4lsy"]
+atlas = ExtResource("20_f4lsy")
+region = Rect2(104, 104, 344, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mbm0"]
+atlas = ExtResource("29_5ixym")
+region = Rect2(-8, 312, 584, 504)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxtmf"]
+atlas = ExtResource("3_fsijs")
+region = Rect2(904, 56, 608, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwuu8"]
+atlas = ExtResource("3_fsijs")
+region = Rect2(96, 0, 688, 344)
+
+[sub_resource type="Gradient" id="Gradient_v1xvq"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wcyn6"]
+gradient = SubResource("Gradient_v1xvq")
+
+[node name="Node2D" type="Node2D" unique_id=1747333255]
+script = ExtResource("1_xxtmf")
+
+[node name="zone1" type="Area2D" parent="." unique_id=279212180]
+visible = false
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone1" unique_id=1668868789]
+position = Vector2(452, 314.5)
+shape = SubResource("RectangleShape2D_5ixym")
+
+[node name="zone2" type="Area2D" parent="." unique_id=991589962]
+visible = false
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone2" unique_id=1469890669]
+position = Vector2(7398.5, 724)
+shape = SubResource("RectangleShape2D_q7a8t")
+
+[node name="zone3" type="Area2D" parent="." unique_id=1592645404]
+visible = false
+position = Vector2(15013, 0)
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone3" unique_id=1800617156]
+position = Vector2(490, 724)
+shape = SubResource("RectangleShape2D_5mbm0")
+
+[node name="transition" type="Area2D" parent="." unique_id=2096350689]
+position = Vector2(2024, 0)
+collision_mask = 4
+script = ExtResource("2_nsbuw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transition" unique_id=1623802703]
+position = Vector2(-41, -6.5)
+shape = SubResource("RectangleShape2D_v1xvq")
+disabled = true
+debug_color = Color(0.97, 0, 0.01616642, 0.41960785)
+
+[node name="Area1Cam" type="Area2D" parent="." unique_id=1091906583]
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area1Cam" unique_id=1698047060]
+position = Vector2(-144.5, 0)
+shape = SubResource("RectangleShape2D_2sktj")
+
+[node name="Area2Cam" type="Area2D" parent="." unique_id=1259362558]
+position = Vector2(1552, 0)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(1400, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Cam" unique_id=663571591]
+position = Vector2(-204.5, 50)
+shape = SubResource("RectangleShape2D_2m5xi")
+debug_color = Color(0.08076166, 0.64944166, 0, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2Cam" unique_id=353349462]
+position = Vector2(-664.5, 432.5)
+shape = SubResource("RectangleShape2D_life5")
+debug_color = Color(0.08076166, 0.64944166, 0, 0.41960785)
+
+[node name="Area3Cam" type="Area2D" parent="." unique_id=2105014817]
+position = Vector2(1896, 912)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(1039, 830)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area3Cam" unique_id=2115685529]
+position = Vector2(-481, -379.5)
+shape = SubResource("RectangleShape2D_l2b23")
+debug_color = Color(0.77512544, 0.44411024, 0, 0.41960785)
+
+[node name="Area4Cam" type="Area2D" parent="." unique_id=453004305]
+position = Vector2(2976, 104)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(3335, 33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area4Cam" unique_id=1087355796]
+position = Vector2(291, -205)
+shape = SubResource("RectangleShape2D_xxtmf")
+
+[node name="Area5Cam" type="Area2D" parent="." unique_id=1434886030]
+position = Vector2(4432, 937)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(4398, 832)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area5Cam" unique_id=1984278968]
+position = Vector2(-241, -29)
+shape = SubResource("RectangleShape2D_6ec1n")
+debug_color = Color(0, 0.64669925, 0.2381961, 0.41960785)
+
+[node name="Area6Cam" type="Area2D" parent="." unique_id=2037516685]
+position = Vector2(5864, 937)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(5689, 832)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area6Cam" unique_id=819994712]
+position = Vector2(-174.5, -29)
+shape = SubResource("RectangleShape2D_wcyn6")
+
+[node name="Area7Cam" type="Area2D" parent="." unique_id=364998230]
+position = Vector2(5504, -407)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(5364, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area7Cam" unique_id=961613698]
+position = Vector2(-270.5, 373)
+shape = SubResource("RectangleShape2D_s3syr")
+debug_color = Color(0.9662345, 0, 0.4847579, 0.41960785)
+
+[node name="Area8Cam" type="Area2D" parent="." unique_id=302619046]
+position = Vector2(6928, -1351)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(6522, -1218)
+change_cam_size = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area8Cam" unique_id=794078317]
+position = Vector2(-888, 103)
+shape = SubResource("RectangleShape2D_plnh7")
+debug_color = Color(0, 0.64179343, 0.31986687, 0.41960785)
+
+[node name="Area9Cam" type="Area2D" parent="." unique_id=1170757787]
+position = Vector2(6952, 97)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(6904, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area9Cam" unique_id=1672243280]
+position = Vector2(74.5, -127)
+shape = SubResource("RectangleShape2D_6nbd4")
+
+[node name="Area10Cam" type="Area2D" parent="." unique_id=1559738848]
+position = Vector2(8644, -904)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(7426, -1218)
+change_cam_size = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area10Cam" unique_id=1887895741]
+position = Vector2(-636, -420)
+shape = SubResource("RectangleShape2D_ub5jd")
+debug_color = Color(0.85922, 0.3637812, 5.7756904e-07, 0.41960785)
+
+[node name="Area11Cam" type="Area2D" parent="." unique_id=1793091935]
+position = Vector2(8644, -904)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(8318, -140)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area11Cam" unique_id=1937468160]
+position = Vector2(-328.5, 861)
+shape = SubResource("RectangleShape2D_rmf57")
+debug_color = Color(0.9645719, 0, 0.49707818, 0.41960785)
+
+[node name="Area12Cam" type="Area2D" parent="." unique_id=1113900098]
+position = Vector2(6898, 1035)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(6889, 1105)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area12Cam" unique_id=1722933523]
+position = Vector2(8, 26)
+shape = SubResource("RectangleShape2D_vpo30")
+
+[node name="Area13cam" type="Area2D" parent="." unique_id=1569371027]
+position = Vector2(7454, 1991)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(7452, 1959)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area13cam" unique_id=205176248]
+position = Vector2(-185, -60.75)
+shape = SubResource("RectangleShape2D_5equv")
+debug_color = Color(0.96687967, 3.85046e-07, 0.48076648, 0.41960785)
+
+[node name="Area14cam" type="Area2D" parent="." unique_id=1089465573]
+position = Vector2(9346, 1822)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(8773, 1710)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area14cam" unique_id=623986826]
+position = Vector2(-512, -123)
+shape = SubResource("RectangleShape2D_f4lsy")
+debug_color = Color(0.8168791, 0.40869218, 5.7756904e-07, 0.41960785)
+
+[node name="Area15cam" type="Area2D" parent="." unique_id=1316611334]
+position = Vector2(10332, 2579)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(10459, 2513)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area15cam" unique_id=344372567]
+position = Vector2(144, 1.5)
+shape = SubResource("RectangleShape2D_s14fl")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Area16cam" type="Area2D" parent="." unique_id=808531156]
+position = Vector2(11123, 1183)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(11072, 1000)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area16cam" unique_id=1226007661]
+position = Vector2(42.5, 94)
+shape = SubResource("RectangleShape2D_nsbuw")
+debug_color = Color(0, 0.8392157, 0.32156864, 0.41960785)
+
+[node name="Area17cam" type="Area2D" parent="." unique_id=1357926572]
+position = Vector2(10058, 1822)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(9877, 1726)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area17cam" unique_id=718719600]
+position = Vector2(-89, -171.5)
+shape = SubResource("RectangleShape2D_pyf7s")
+debug_color = Color(0.3370379, 0.4875546, 1, 0.41960785)
+
+[node name="Area18cam" type="Area2D" parent="." unique_id=752273166]
+position = Vector2(15575, 1014)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(15450, 650)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area18cam" unique_id=1700510156]
+position = Vector2(-128.5, -377)
+shape = SubResource("RectangleShape2D_anofh")
+
+[node name="Area19cam" type="Area2D" parent="." unique_id=192951816]
+position = Vector2(15439, 1246)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(15450, 1250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area19cam" unique_id=1484331417]
+position = Vector2(0, 209)
+shape = SubResource("RectangleShape2D_nx5o5")
+
+[node name="Area20cam" type="Area2D" parent="." unique_id=857610575]
+position = Vector2(16031, 1454)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(16498, 1250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area20cam" unique_id=74809487]
+position = Vector2(371.5, 166)
+shape = SubResource("RectangleShape2D_hiri5")
+
+[node name="Area21cam" type="Area2D" parent="." unique_id=1680459768]
+position = Vector2(17343, 870)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(17754, -54)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area21cam" unique_id=1151946540]
+position = Vector2(210.5, -360)
+shape = SubResource("RectangleShape2D_i5i72")
+
+[node name="Area22cam" type="Area2D" parent="." unique_id=1181744592]
+position = Vector2(18375, -186)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(18442, -510)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area22cam" unique_id=1104083177]
+position = Vector2(95.5, 288)
+shape = SubResource("RectangleShape2D_xvpnm")
+
+[node name="Area23cam" type="Area2D" parent="." unique_id=597617035]
+position = Vector2(17535, -1130)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(18138, -1022)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area23cam" unique_id=1499099800]
+position = Vector2(95.5, 288)
+shape = SubResource("RectangleShape2D_xvpnm")
+
+[node name="Area24cam" type="Area2D" parent="." unique_id=2095218040]
+position = Vector2(19535, -1338)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(19818, -1022)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area24cam" unique_id=212716337]
+position = Vector2(-143, 214.5)
+shape = SubResource("RectangleShape2D_o7gma")
+
+[node name="Area25cam" type="Area2D" parent="." unique_id=1970002290]
+position = Vector2(19639, -2506)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(19634, -2390)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area25cam" unique_id=2143667190]
+position = Vector2(1, 255)
+shape = SubResource("RectangleShape2D_8hmaf")
+
+[node name="Area26cam" type="Area2D" parent="." unique_id=1920516517]
+position = Vector2(21015, -1138)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(21186, -934)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area26cam" unique_id=90200225]
+position = Vector2(-102, 207)
+shape = SubResource("RectangleShape2D_8vs63")
+
+[node name="Area27cam" type="Area2D" parent="." unique_id=1861050307]
+position = Vector2(21391, -2034)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(21186, -2046)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area27cam" unique_id=1703889769]
+position = Vector2(-102, 207)
+shape = SubResource("RectangleShape2D_kbs1r")
+
+[node name="Area28cam" type="Area2D" parent="." unique_id=1939216649]
+position = Vector2(22724, -948)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(22776, -707)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area28cam" unique_id=1097817391]
+position = Vector2(-249.5, 218)
+shape = SubResource("RectangleShape2D_naetd")
+
+[node name="Area29cam" type="Area2D" parent="." unique_id=2117516295]
+position = Vector2(24172, -908)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(24168, -683)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area29cam" unique_id=127070712]
+position = Vector2(-175.5, 218)
+shape = SubResource("RectangleShape2D_50jmu")
+
+[node name="Area30cam" type="Area2D" parent="." unique_id=1243724435]
+position = Vector2(23905, -1760)
+collision_mask = 4
+script = ExtResource("1_2m5xi")
+pos = Vector2(24400, -2171)
+change_cam_size = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area30cam" unique_id=1712671218]
+position = Vector2(-175.5, 197.5)
+shape = SubResource("RectangleShape2D_r4acg")
+
+[node name="régions de navigation" type="Node" parent="." unique_id=618695037]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="régions de navigation" unique_id=1943850694]
+navigation_polygon = SubResource("NavigationPolygon_5mbm0")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="régions de navigation/NavigationRegion2D" unique_id=1339836345]
+position = Vector2(632, 43)
+radius = 177.71
+
+[node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="régions de navigation/NavigationRegion2D" unique_id=366904284]
+position = Vector2(949, 853)
+radius = 155.78
+
+[node name="NavigationRegion2D2" type="NavigationRegion2D" parent="régions de navigation" unique_id=749718330]
+navigation_polygon = SubResource("NavigationPolygon_5ixym")
+
+[node name="NavigationRegion2D3" type="NavigationRegion2D" parent="régions de navigation" unique_id=2064672381]
+navigation_polygon = SubResource("NavigationPolygon_q7a8t")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="régions de navigation/NavigationRegion2D3" unique_id=554032556]
+vertices = PackedVector2Array(8834, 1927, 8954, 1970, 9061, 1858, 9395, 1864, 9442, 1757, 9458, 1715, 9434, 1683, 9392, 1689, 8940, 1672, 8836, 1671, 8817, 1701, 8834, 1749, 8850.287, 1800.7372)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="bridge" type="NavigationRegion2D" parent="régions de navigation" unique_id=1615022915]
+navigation_polygon = SubResource("NavigationPolygon_pyf7s")
+enabled = false
+
+[node name="herbe" type="ColorRect" parent="." unique_id=589801346]
+offset_left = -1083.0
+offset_top = -840.0
+offset_right = 2010.0
+offset_bottom = 1486.0
+color = Color(0.42815483, 0.67986715, 0.17754301, 1)
+
+[node name="sol" type="ColorRect" parent="." unique_id=1791906670]
+offset_left = 2094.0
+offset_top = -2016.0
+offset_right = 12259.0
+offset_bottom = 3398.0
+color = Color(0.25899473, 0.3062389, 0.5092924, 1)
+
+[node name="Line2D" type="Line2D" parent="sol" unique_id=2100455045]
+position = Vector2(0, 1369)
+points = PackedVector2Array(249, 805, 1605.7987, 800.71375, 1760.6288, 916.64185, 1749.7314, 1662.4949, 1910.5146, 1781, 2531, 1783, 2538.518, 717.3088, 2625.298, 649.3977, 3359, 649, 3362, -825, 3362.456, -196.72144, 3357, 649, 4170, 799, 6103, 795, 6376, 434, 6392, -843)
+width = 150.0
+default_color = Color(0.40637, 0.46594155, 0.7067948, 1)
+
+[node name="Line2D2" type="Line2D" parent="sol" unique_id=1980966569]
+points = PackedVector2Array(2545, 3152, 4701, 3141, 4788, 3294, 4784, 4001, 4923, 4112, 6066, 4104, 7576, 4136, 7825, 3959, 7831, 3581, 7702, 3467, 6374, 3475, 6294, 3596, 6289, 4109, 7576, 4135, 7825, 3960, 7824, 4374, 7955, 4526, 9130, 4571)
+width = 150.0
+default_color = Color(0.40784314, 0.46666667, 0.7058824, 1)
+
+[node name="Line2D3" type="Line2D" parent="sol" unique_id=1987707431]
+points = PackedVector2Array(7716, 3467, 9477, 3476, 9551, 3385, 9550, 3180, 9432, 3104, 8772, 3102, 8694, 3179, 8690, 3434)
+width = 150.0
+default_color = Color(0.40784314, 0.46666667, 0.7058824, 1)
+
+[node name="Vide" type="ColorRect" parent="." unique_id=1182277535]
+offset_left = 5543.0
+offset_top = 949.0
+offset_right = 6272.0
+offset_bottom = 1331.0
+color = Color(0, 0, 0, 1)
+
+[node name="Abyss" type="ColorRect" parent="." unique_id=1329962868]
+offset_left = 14271.0
+offset_top = -4252.0
+offset_right = 27064.0
+offset_bottom = 2567.0
+color = Color(0, 0, 0, 1)
+
+[node name="dégradé" type="Sprite2D" parent="." unique_id=1631647071]
+position = Vector2(5924, 1181.0001)
+scale = Vector2(1.417722, 1.1875596)
+texture = SubResource("AtlasTexture_anofh")
+offset = Vector2(0, -122.47)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=542224496]
+tile_map_data = PackedByteArray("AAAKAP//AAADAAAAAAAJAP//AAADAAAAAAAJAP7/AAABAAAAAAAKAP7/AAABAAAAAAALAP//AAADAAAAAAALAP7/AAABAAAAAAAMAP//AAADAAAAAAAMAP7/AAABAAAAAAANAAAAAAABAAAAAAANAAEAAAABAAAAAAANAAIAAAAFAAAAAAAIAP//AAADAAAAAAAHAP//AAADAAAAAAAIAP7/AAABAAAAAAAHAP7/AAABAAAAAAAIAAEAAAABAAAAAAAJAAEAAAABAAAAAAAKAAEAAAABAAAAAAAKAAIAAAABAAAAAAAKAAMAAAABAAAAAAAKAAQAAAABAAAAAAALAAQAAAABAAAAAAAMAAQAAAABAAAAAAANAAQAAAABAAAAAAAOAAQAAAABAAAAAAAPAAQAAAABAAAAAAAQAAQAAAABAAAAAAARAAQAAAABAAAAAAASAAQAAAABAAAAAAATAAQAAAABAAAAAAARAAEAAAABAAAAAAARAAIAAAADAAAAAAAPAAEAAAABAAAAAAAPAAIAAAACAAAAAAAQAAEAAAABAAAAAAAQAAIAAAADAAAAAAASAAEAAAABAAAAAAATAAEAAAABAAAAAAAUAP3/AAABAAAAAAAUAP//AAACAAAAAAAVAP//AAADAAAAAAAWAP//AAADAAAAAAAXAP//AAADAAAAAAANAP3/AAABAAAAAAANAP7/AAABAAAAAAAOAP3/AAABAAAAAAAOAP7/AAADAAAAAAAPAP3/AAABAAAAAAAPAP7/AAAEAAAAAAASAP3/AAABAAAAAAASAP7/AAACAAAAAAATAP3/AAABAAAAAAATAP7/AAADAAAAAAAUAP7/AAABAAAAAAAUAAEAAAABAAAAAAAVAP7/AAABAAAAAAAVAAEAAAABAAAAAAAWAP7/AAABAAAAAAAWAAEAAAABAAAAAAAXAP7/AAABAAAAAAAXAAEAAAABAAAAAAANAP//AAABAAAAAAAPAPz/AAABAAAAAAAYAAEAAAABAAAAAAAZAAEAAAABAAAAAAAaAAEAAAABAAAAAAAbAAEAAAABAAAAAAAbAPv/AAABAAAAAAAbAPz/AAABAAAAAAAbAP3/AAABAAAAAAAbAP7/AAABAAAAAAAbAP//AAABAAAAAAAbAAAAAAABAAAAAAAVAP3/AAABAAAAAAAWAP3/AAABAAAAAAAXAP3/AAABAAAAAAAYAP7/AAABAAAAAAAYAP3/AAABAAAAAAAZAP3/AAABAAAAAAAYAP//AAABAAAAAAAZAP7/AAAEAAAAAAAOAPz/AAABAAAAAAANAPz/AAABAAAAAAAMAPz/AAABAAAAAAALAPz/AAABAAAAAAAKAPz/AAABAAAAAAAJAPz/AAABAAAAAAAIAPz/AAABAAAAAAAHAPz/AAABAAAAAAAHAP3/AAABAAAAAAAIAP3/AAABAAAAAAAJAP3/AAABAAAAAAAKAP3/AAABAAAAAAALAP3/AAABAAAAAAAMAP3/AAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAIAAMAAAABAAAAAAAIAAIAAAABAAAAAAAIAAQAAAABAAAAAAAJAAQAAAABAAAAAAAUAAQAAAABAAAAAAASAAIAAAADAAAAAAATAAIAAAADAAAAAAAUAAIAAAADAAAAAAAPAPv/AAABAAAAAAAPAPn/AAABAAAAAAAQAPn/AAADAAAAAAARAPn/AAADAAAAAAASAPn/AAADAAAAAAATAPn/AAADAAAAAAAUAPn/AAADAAAAAAAVAPn/AAADAAAAAAAWAPn/AAADAAAAAAAXAPn/AAADAAAAAAAYAPn/AAADAAAAAAAZAPn/AAADAAAAAAAaAPn/AAADAAAAAAAbAPn/AAABAAAAAAAPAPr/AAABAAAAAAAbAPr/AAABAAAAAAAYAAAAAAABAAAAAAAVAAIAAAADAAAAAAAWAAIAAAABAAAAAAAWAAMAAAABAAAAAAAWAAQAAAABAAAAAAAUAAUAAAABAAAAAAAUAAYAAAABAAAAAAAUAAcAAAABAAAAAAAXAAQAAAABAAAAAAAYAAQAAAABAAAAAAAXAAMAAAABAAAAAAAXAAIAAAABAAAAAAAYAAIAAAABAAAAAAAYAAMAAAABAAAAAAAWAAUAAAACAAAAAAAXAAUAAAADAAAAAAAYAAUAAAAEAAAAAAAVAAcAAAABAAAAAAAWAAcAAAABAAAAAAAXAAcAAAABAAAAAAAYAAcAAAABAAAAAAAdAAcAAAABAAAAAAAcAAcAAAABAAAAAAAbAAcAAAABAAAAAAAaAAcAAAABAAAAAAAZAAcAAAABAAAAAAAZAAIAAAABAAAAAAAaAAIAAAABAAAAAAAbAAIAAAABAAAAAAAcAAIAAAABAAAAAAAdAAIAAAABAAAAAAAeAAIAAAABAAAAAAAgAAIAAAABAAAAAAAdAAgAAAABAAAAAAAgAAUAAAABAAAAAAAgAAYAAAACAAAAAAAhAAUAAAABAAAAAAAiAAUAAAABAAAAAAAjAAUAAAABAAAAAAAkAAUAAAABAAAAAAAlAAUAAAABAAAAAAAhAAYAAAADAAAAAAAiAAYAAAADAAAAAAAjAAYAAAABAAAAAAAdAAMAAAADAAAAAAAcAAMAAAADAAAAAAAbAAMAAAADAAAAAAAaAAMAAAADAAAAAAAZAAMAAAADAAAAAAAgAAEAAAABAAAAAAAhAAEAAAABAAAAAAAiAAEAAAABAAAAAAAjAAEAAAABAAAAAAAkAAEAAAABAAAAAAAlAAEAAAABAAAAAAAgAAMAAAAEAAAAAAAlAAIAAAABAAAAAAAkAAIAAAADAAAAAAAjAAIAAAADAAAAAAAiAAIAAAADAAAAAAAhAAIAAAADAAAAAAAfAAIAAAABAAAAAAAeAAMAAAADAAAAAAAfAAMAAAADAAAAAAAdAAkAAAABAAAAAAAeAAkAAAABAAAAAAAfAAkAAAABAAAAAAAgAAkAAAABAAAAAAAhAAkAAAABAAAAAAAiAAkAAAABAAAAAAAjAAkAAAABAAAAAAAjAAcAAAABAAAAAAAjAAgAAAABAAAAAAAlAAQAAAABAAAAAAAlAAMAAAABAAAAAAAfAAEAAAABAAAAAAAeAAEAAAABAAAAAAAeAAAAAAABAAAAAAAfAAAAAAABAAAAAAAgAAAAAAABAAAAAAAhAAAAAAABAAAAAAAiAAAAAAABAAAAAAAjAAAAAAABAAAAAAAkAAAAAAABAAAAAAAlAAAAAAABAAAAAAAmAAAAAAABAAAAAAAmAAEAAAABAAAAAAAmAAIAAAABAAAAAAAmAAMAAAABAAAAAAAmAAQAAAABAAAAAAAmAAUAAAABAAAAAAAmAAYAAAABAAAAAAAlAAYAAAABAAAAAAAkAAYAAAABAAAAAAAZAAgAAAABAAAAAAAaAAgAAAABAAAAAAAbAAgAAAABAAAAAAAcAAgAAAABAAAAAAAcAAkAAAABAAAAAAAbAAkAAAABAAAAAAAaAAkAAAABAAAAAAAZAAkAAAABAAAAAAAZAAoAAAABAAAAAAAaAAoAAAABAAAAAAAbAAoAAAABAAAAAAAcAAoAAAABAAAAAAAdAAoAAAABAAAAAAAeAAoAAAABAAAAAAAfAAoAAAABAAAAAAAgAAoAAAABAAAAAAAhAAoAAAABAAAAAAAiAAoAAAABAAAAAAAjAAoAAAABAAAAAAAkAAoAAAABAAAAAAAlAAoAAAABAAAAAAAmAAoAAAABAAAAAAAmAAkAAAABAAAAAAAmAAgAAAABAAAAAAAmAAcAAAABAAAAAAAlAAcAAAABAAAAAAAkAAcAAAABAAAAAAAkAAgAAAABAAAAAAAkAAkAAAABAAAAAAAlAAkAAAABAAAAAAAlAAgAAAABAAAAAAAmAP//AAABAAAAAAAlAP//AAABAAAAAAAkAP//AAABAAAAAAAjAP//AAABAAAAAAAiAP//AAABAAAAAAAhAP//AAABAAAAAAAgAP//AAABAAAAAAAfAP//AAABAAAAAAAeAP//AAABAAAAAAAdAP//AAABAAAAAAAcAP//AAABAAAAAAAcAAAAAAABAAAAAAAcAAEAAAABAAAAAAAdAAEAAAABAAAAAAAdAAAAAAABAAAAAAAYAAgAAAABAAAAAAAXAAgAAAABAAAAAAAWAAgAAAABAAAAAAAVAAgAAAABAAAAAAAUAAgAAAABAAAAAAATAAgAAAABAAAAAAATAAcAAAABAAAAAAATAAYAAAABAAAAAAATAAUAAAABAAAAAAASAAUAAAABAAAAAAASAAYAAAABAAAAAAASAAcAAAABAAAAAAASAAgAAAABAAAAAAASAAkAAAABAAAAAAATAAkAAAABAAAAAAAUAAkAAAABAAAAAAAVAAkAAAABAAAAAAAWAAkAAAABAAAAAAAXAAkAAAABAAAAAAAYAAkAAAABAAAAAAAnAP//AAABAAAAAAAnAAAAAAABAAAAAAAnAAEAAAABAAAAAAAnAAIAAAABAAAAAAAnAAMAAAABAAAAAAAnAAQAAAABAAAAAAAnAAUAAAABAAAAAAAnAAYAAAABAAAAAAAnAAcAAAABAAAAAAAnAAgAAAABAAAAAAAnAAkAAAABAAAAAAAnAAoAAAABAAAAAAAHAAEAAAABAAAAAAAHAAIAAAABAAAAAAAcAP7/AAABAAAAAAAdAP7/AAABAAAAAAAdAP3/AAABAAAAAAAcAP3/AAABAAAAAAAcAPz/AAABAAAAAAAdAPz/AAABAAAAAAAcAPv/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_hc0wr")
+
+[node name="shadowLayer" type="TileMapLayer" parent="." unique_id=1642086519]
+tile_map_data = PackedByteArray("AAAMAP//AAABAAAAAAAOAP7/AAAAAAEAAAATAP7/AAABAAAAAAAZAP7/AAAAAAEAAAAQAPn/AAAAAAEAAAAaAPn/AAABAAAAAAAXAP//AAABAAAAAAAVAAIAAAABAAAAAAAZAAMAAAAAAAEAAAAhAAIAAAAAAAEAAAAiAAYAAAABAAAAAAAkAAIAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_v1xvq")
+
+[node name="EntreeTempleBack" type="Sprite2D" parent="." unique_id=2351484]
+position = Vector2(1959, -41)
+texture = ExtResource("25_f4lsy")
+
+[node name="objets fixes" type="Node2D" parent="." unique_id=295468198]
+
+[node name="tronc12" type="Sprite2D" parent="objets fixes" unique_id=252880166]
+position = Vector2(361, -313)
+texture = SubResource("AtlasTexture_life5")
+offset = Vector2(0, -200.59)
+
+[node name="tronc13" type="Sprite2D" parent="objets fixes" unique_id=1351152677]
+position = Vector2(105, -313)
+texture = SubResource("AtlasTexture_life5")
+offset = Vector2(0, -200.59)
+
+[node name="tronc14" type="Sprite2D" parent="objets fixes" unique_id=105961034]
+position = Vector2(-335, -425)
+texture = SubResource("AtlasTexture_life5")
+offset = Vector2(0, -200.59)
+
+[node name="tronc1" type="Sprite2D" parent="objets fixes" unique_id=1341732525]
+position = Vector2(264, -113)
+texture = SubResource("AtlasTexture_life5")
+offset = Vector2(0, -200.59)
+
+[node name="tronc2" type="Sprite2D" parent="objets fixes" unique_id=425099469]
+position = Vector2(-330, -318)
+texture = SubResource("AtlasTexture_life5")
+offset = Vector2(0, -200.59)
+
+[node name="tronc3" type="Sprite2D" parent="objets fixes" unique_id=849958794]
+position = Vector2(-153, -233)
+texture = SubResource("AtlasTexture_life5")
+offset = Vector2(0, -200.59)
+
+[node name="tronc4" type="Sprite2D" parent="objets fixes" unique_id=1381425278]
+position = Vector2(-39, -159)
+texture = SubResource("AtlasTexture_t5gsb")
+offset = Vector2(0, -200.59)
+
+[node name="tronc5" type="Sprite2D" parent="objets fixes" unique_id=1804744571]
+position = Vector2(161, -111)
+texture = SubResource("AtlasTexture_t5gsb")
+offset = Vector2(0, -200.59)
+
+[node name="tronc6" type="Sprite2D" parent="objets fixes" unique_id=1658109213]
+position = Vector2(-644, -313)
+texture = SubResource("AtlasTexture_life5")
+offset = Vector2(0, -200.59)
+
+[node name="tronc7" type="Sprite2D" parent="objets fixes" unique_id=541728293]
+position = Vector2(-551, -311)
+texture = SubResource("AtlasTexture_t5gsb")
+offset = Vector2(0, -200.59)
+
+[node name="tronc8" type="Sprite2D" parent="objets fixes" unique_id=598516875]
+position = Vector2(441, -102)
+texture = SubResource("AtlasTexture_fsijs")
+offset = Vector2(0, -200.59)
+
+[node name="tronc9" type="Sprite2D" parent="objets fixes" unique_id=236360147]
+position = Vector2(-840, -254)
+texture = SubResource("AtlasTexture_fsijs")
+offset = Vector2(0, -200.59)
+
+[node name="tronc10" type="Sprite2D" parent="objets fixes" unique_id=1697779422]
+position = Vector2(-927, -95)
+texture = SubResource("AtlasTexture_t5gsb")
+offset = Vector2(0, -200.59)
+
+[node name="tronc16" type="Sprite2D" parent="objets fixes" unique_id=808512247]
+position = Vector2(1371, -309)
+texture = SubResource("AtlasTexture_fsijs")
+offset = Vector2(0, -200.59)
+
+[node name="tronc17" type="Sprite2D" parent="objets fixes" unique_id=427504146]
+position = Vector2(1397, -275)
+texture = SubResource("AtlasTexture_fsijs")
+offset = Vector2(0, -200.59)
+
+[node name="tronc22" type="Sprite2D" parent="objets fixes" unique_id=1236380197]
+position = Vector2(1087, -283)
+texture = SubResource("AtlasTexture_fsijs")
+offset = Vector2(0, -200.59)
+
+[node name="tronc18" type="Sprite2D" parent="objets fixes" unique_id=715525282]
+position = Vector2(1324, -193)
+texture = SubResource("AtlasTexture_life5")
+offset = Vector2(0, -200.59)
+
+[node name="tronc21" type="Sprite2D" parent="objets fixes" unique_id=2046612989]
+position = Vector2(948, -217)
+texture = SubResource("AtlasTexture_life5")
+offset = Vector2(0, -200.59)
+
+[node name="tronc19" type="Sprite2D" parent="objets fixes" unique_id=242076652]
+position = Vector2(1047, -165)
+texture = SubResource("AtlasTexture_t5gsb")
+offset = Vector2(0, -200.59)
+
+[node name="tronc20" type="Sprite2D" parent="objets fixes" unique_id=1999013657]
+position = Vector2(828, -57)
+texture = SubResource("AtlasTexture_life5")
+offset = Vector2(0, -200.59)
+
+[node name="tronc11" type="Sprite2D" parent="objets fixes" unique_id=106249500]
+position = Vector2(625, 89)
+texture = SubResource("AtlasTexture_t5gsb")
+offset = Vector2(0, -200.59)
+
+[node name="tronc23" type="Sprite2D" parent="objets fixes" unique_id=1908094338]
+position = Vector2(2090, 822)
+texture = SubResource("AtlasTexture_t5gsb")
+offset = Vector2(0, -200.59)
+
+[node name="tronc24" type="Sprite2D" parent="objets fixes" unique_id=1061409929]
+position = Vector2(959, 964)
+texture = SubResource("AtlasTexture_life5")
+offset = Vector2(0, -200.59)
+
+[node name="tronc28" type="Sprite2D" parent="objets fixes" unique_id=1994548029]
+position = Vector2(747, 999)
+texture = SubResource("AtlasTexture_t5gsb")
+offset = Vector2(0, -200.59)
+
+[node name="tronc32" type="Sprite2D" parent="objets fixes" unique_id=146901428]
+position = Vector2(183, 1167)
+texture = SubResource("AtlasTexture_t5gsb")
+offset = Vector2(0, -200.59)
+
+[node name="tronc30" type="Sprite2D" parent="objets fixes" unique_id=1868404089]
+position = Vector2(538, 1090)
+texture = SubResource("AtlasTexture_fsijs")
+offset = Vector2(0, -200.59)
+
+[node name="tronc33" type="Sprite2D" parent="objets fixes" unique_id=357604982]
+position = Vector2(97, 1262)
+texture = SubResource("AtlasTexture_fsijs")
+offset = Vector2(0, -200.59)
+
+[node name="tronc25" type="Sprite2D" parent="objets fixes" unique_id=1891300133]
+position = Vector2(1855, 936)
+texture = SubResource("AtlasTexture_life5")
+offset = Vector2(0, -200.59)
+
+[node name="tronc26" type="Sprite2D" parent="objets fixes" unique_id=856332709]
+position = Vector2(1900, 1122)
+texture = SubResource("AtlasTexture_life5")
+offset = Vector2(0, -200.59)
+
+[node name="tronc29" type="Sprite2D" parent="objets fixes" unique_id=294123772]
+position = Vector2(1948, 1298)
+texture = SubResource("AtlasTexture_t5gsb")
+offset = Vector2(0, -200.59)
+
+[node name="tronc27" type="Sprite2D" parent="objets fixes" unique_id=226695845]
+position = Vector2(372, 1226)
+texture = SubResource("AtlasTexture_life5")
+offset = Vector2(0, -200.59)
+
+[node name="tronc31" type="Sprite2D" parent="objets fixes" unique_id=994186270]
+position = Vector2(2023, 1399)
+texture = SubResource("AtlasTexture_fsijs")
+offset = Vector2(0, -200.59)
+
+[node name="barrier" parent="objets fixes" unique_id=550575985 instance=ExtResource("28_pyf7s")]
+position = Vector2(5177, -406)
+is_color_orange = true
+
+[node name="barrier2" parent="objets fixes" unique_id=1336030755 instance=ExtResource("28_pyf7s")]
+position = Vector2(5309, -406)
+is_color_orange = true
+
+[node name="barrier3" parent="objets fixes" unique_id=440706558 instance=ExtResource("28_pyf7s")]
+position = Vector2(5441, -406)
+is_color_orange = true
+
+[node name="barrier4" parent="objets fixes" unique_id=1068884136 instance=ExtResource("28_pyf7s")]
+position = Vector2(5573, -406)
+is_color_orange = true
+
+[node name="barrier5" parent="objets fixes" unique_id=1594829351 instance=ExtResource("28_pyf7s")]
+position = Vector2(5705, -406)
+is_color_orange = true
+
+[node name="barrier6" parent="objets fixes" unique_id=1846345622 instance=ExtResource("28_pyf7s")]
+position = Vector2(6185, -230)
+
+[node name="barrier7" parent="objets fixes" unique_id=986673451 instance=ExtResource("28_pyf7s")]
+position = Vector2(6185, -78)
+
+[node name="barrier8" parent="objets fixes" unique_id=268261858 instance=ExtResource("28_pyf7s")]
+position = Vector2(6185, 66)
+
+[node name="barrier9" parent="objets fixes" unique_id=1459902294 instance=ExtResource("28_pyf7s")]
+position = Vector2(6185, 218)
+
+[node name="barrier19" parent="objets fixes" unique_id=1708265905 instance=ExtResource("28_pyf7s")]
+position = Vector2(5809, -1822)
+is_color_orange = true
+
+[node name="barrier20" parent="objets fixes" unique_id=1864681317 instance=ExtResource("28_pyf7s")]
+position = Vector2(5942, -1518)
+
+[node name="barrier21" parent="objets fixes" unique_id=1089237210 instance=ExtResource("28_pyf7s")]
+position = Vector2(6075, -1518)
+
+[node name="barrier22" parent="objets fixes" unique_id=769249215 instance=ExtResource("28_pyf7s")]
+position = Vector2(6208, -1518)
+
+[node name="barrier28" parent="objets fixes" unique_id=1908409857 instance=ExtResource("28_pyf7s")]
+position = Vector2(6341, -1822)
+is_color_orange = true
+
+[node name="barrier27" parent="objets fixes" unique_id=2123136133 instance=ExtResource("28_pyf7s")]
+position = Vector2(6341, -1670)
+is_color_orange = true
+
+[node name="barrier23" parent="objets fixes" unique_id=2094780215 instance=ExtResource("28_pyf7s")]
+position = Vector2(6341, -1518)
+
+[node name="barrier24" parent="objets fixes" unique_id=1968049115 instance=ExtResource("28_pyf7s")]
+position = Vector2(6341, -1366)
+is_color_orange = true
+
+[node name="barrier25" parent="objets fixes" unique_id=1073868451 instance=ExtResource("28_pyf7s")]
+position = Vector2(6341, -1214)
+is_color_orange = true
+
+[node name="barrier26" parent="objets fixes" unique_id=347635882 instance=ExtResource("28_pyf7s")]
+position = Vector2(6341, -1062)
+is_color_orange = true
+
+[node name="barrier29" parent="objets fixes" unique_id=1309156652 instance=ExtResource("28_pyf7s")]
+position = Vector2(6474, -1518)
+
+[node name="barrier30" parent="objets fixes" unique_id=259396592 instance=ExtResource("28_pyf7s")]
+position = Vector2(6607, -1518)
+is_color_orange = true
+
+[node name="barrier31" parent="objets fixes" unique_id=62562776 instance=ExtResource("28_pyf7s")]
+position = Vector2(6740, -1518)
+is_color_orange = true
+
+[node name="barrier34" parent="objets fixes" unique_id=1719379155 instance=ExtResource("28_pyf7s")]
+position = Vector2(6873, -1822)
+
+[node name="barrier35" parent="objets fixes" unique_id=503117118 instance=ExtResource("28_pyf7s")]
+position = Vector2(7236, -1822)
+
+[node name="barrier44" parent="objets fixes" unique_id=409698282 instance=ExtResource("28_pyf7s")]
+position = Vector2(7370, -1518)
+
+[node name="barrier45" parent="objets fixes" unique_id=1018649066 instance=ExtResource("28_pyf7s")]
+position = Vector2(7504, -1518)
+
+[node name="barrier46" parent="objets fixes" unique_id=2086618092 instance=ExtResource("28_pyf7s")]
+position = Vector2(7637, -1518)
+
+[node name="barrier49" parent="objets fixes" unique_id=1945230071 instance=ExtResource("28_pyf7s")]
+position = Vector2(7771, -1822)
+is_color_orange = true
+
+[node name="barrier48" parent="objets fixes" unique_id=768041109 instance=ExtResource("28_pyf7s")]
+position = Vector2(7771, -1670)
+is_color_orange = true
+
+[node name="barrier47" parent="objets fixes" unique_id=85224505 instance=ExtResource("28_pyf7s")]
+position = Vector2(7771, -1518)
+is_color_orange = true
+
+[node name="barrier53" parent="objets fixes" unique_id=1171301569 instance=ExtResource("28_pyf7s")]
+position = Vector2(7904, -1518)
+
+[node name="barrier57" parent="objets fixes" unique_id=293732940 instance=ExtResource("28_pyf7s")]
+position = Vector2(8036, -1518)
+
+[node name="barrier58" parent="objets fixes" unique_id=845912436 instance=ExtResource("28_pyf7s")]
+position = Vector2(8168, -1518)
+
+[node name="barrier59" parent="objets fixes" unique_id=300324308 instance=ExtResource("28_pyf7s")]
+position = Vector2(8300, -1518)
+
+[node name="barrier60" parent="objets fixes" unique_id=976069568 instance=ExtResource("28_pyf7s")]
+position = Vector2(8433, -1518)
+
+[node name="barrier61" parent="objets fixes" unique_id=1499062196 instance=ExtResource("28_pyf7s")]
+position = Vector2(8566, -1518)
+
+[node name="barrier54" parent="objets fixes" unique_id=873691777 instance=ExtResource("28_pyf7s")]
+position = Vector2(7904, -1366)
+
+[node name="barrier55" parent="objets fixes" unique_id=275235670 instance=ExtResource("28_pyf7s")]
+position = Vector2(7904, -1214)
+
+[node name="barrier56" parent="objets fixes" unique_id=859460564 instance=ExtResource("28_pyf7s")]
+position = Vector2(7904, -1062)
+
+[node name="barrier50" parent="objets fixes" unique_id=390357192 instance=ExtResource("28_pyf7s")]
+position = Vector2(7771, -1366)
+is_color_orange = true
+
+[node name="barrier51" parent="objets fixes" unique_id=1230092699 instance=ExtResource("28_pyf7s")]
+position = Vector2(7771, -1214)
+is_color_orange = true
+
+[node name="barrier52" parent="objets fixes" unique_id=589645 instance=ExtResource("28_pyf7s")]
+position = Vector2(7771, -1062)
+is_color_orange = true
+
+[node name="barrier36" parent="objets fixes" unique_id=1676055712 instance=ExtResource("28_pyf7s")]
+position = Vector2(7236, -1670)
+
+[node name="barrier37" parent="objets fixes" unique_id=714464313 instance=ExtResource("28_pyf7s")]
+position = Vector2(7236, -1518)
+is_color_orange = true
+
+[node name="barrier38" parent="objets fixes" unique_id=857752959 instance=ExtResource("28_pyf7s")]
+position = Vector2(7236, -1366)
+is_color_orange = true
+
+[node name="barrier39" parent="objets fixes" unique_id=145535448 instance=ExtResource("28_pyf7s")]
+position = Vector2(7236, -1214)
+is_color_orange = true
+
+[node name="barrier40" parent="objets fixes" unique_id=1779526670 instance=ExtResource("28_pyf7s")]
+position = Vector2(7236, -1062)
+is_color_orange = true
+
+[node name="barrier33" parent="objets fixes" unique_id=1073022166 instance=ExtResource("28_pyf7s")]
+position = Vector2(6873, -1670)
+
+[node name="barrier32" parent="objets fixes" unique_id=760756649 instance=ExtResource("28_pyf7s")]
+position = Vector2(6873, -1518)
+
+[node name="barrier41" parent="objets fixes" unique_id=919190005 instance=ExtResource("28_pyf7s")]
+position = Vector2(6873, -1366)
+
+[node name="barrier42" parent="objets fixes" unique_id=1218499455 instance=ExtResource("28_pyf7s")]
+position = Vector2(6873, -1214)
+
+[node name="barrier43" parent="objets fixes" unique_id=570246841 instance=ExtResource("28_pyf7s")]
+position = Vector2(6873, -1062)
+
+[node name="barrier18" parent="objets fixes" unique_id=95281153 instance=ExtResource("28_pyf7s")]
+position = Vector2(5809, -1670)
+is_color_orange = true
+
+[node name="barrier17" parent="objets fixes" unique_id=1658570430 instance=ExtResource("28_pyf7s")]
+position = Vector2(5809, -1518)
+
+[node name="barrier10" parent="objets fixes" unique_id=1458618953 instance=ExtResource("28_pyf7s")]
+position = Vector2(5809, -1366)
+
+[node name="barrier11" parent="objets fixes" unique_id=1339825483 instance=ExtResource("28_pyf7s")]
+position = Vector2(5809, -1214)
+
+[node name="barrier12" parent="objets fixes" unique_id=1323166608 instance=ExtResource("28_pyf7s")]
+position = Vector2(5809, -1062)
+
+[node name="barrier13" parent="objets fixes" unique_id=1859751172 instance=ExtResource("28_pyf7s")]
+position = Vector2(5676, -1366)
+is_color_orange = true
+
+[node name="barrier14" parent="objets fixes" unique_id=1050527422 instance=ExtResource("28_pyf7s")]
+position = Vector2(5543, -1366)
+is_color_orange = true
+
+[node name="barrier15" parent="objets fixes" unique_id=1738860903 instance=ExtResource("28_pyf7s")]
+position = Vector2(5410, -1366)
+is_color_orange = true
+
+[node name="barrier16" parent="objets fixes" unique_id=339213766 instance=ExtResource("28_pyf7s")]
+position = Vector2(5277, -1366)
+is_color_orange = true
+
+[node name="pont" type="Sprite2D" parent="objets fixes" unique_id=1390420583]
+visible = false
+position = Vector2(5908, 1118.5)
+scale = Vector2(1.2434211, 1.1367188)
+texture = SubResource("AtlasTexture_hiri5")
+
+[node name="bout1" type="Sprite2D" parent="objets fixes" unique_id=655023587]
+position = Vector2(5513, 1133)
+texture = SubResource("AtlasTexture_nx5o5")
+
+[node name="bout2" type="Sprite2D" parent="objets fixes" unique_id=533340267]
+position = Vector2(6301, 1107)
+texture = SubResource("AtlasTexture_nx5o5")
+flip_h = true
+
+[node name="bibliothèque" type="Sprite2D" parent="objets fixes" unique_id=1785796695]
+position = Vector2(8359, 1155)
+texture = SubResource("AtlasTexture_i5i72")
+
+[node name="bibliothèque2" type="Sprite2D" parent="objets fixes" unique_id=6881291]
+position = Vector2(8975, 1155)
+texture = SubResource("AtlasTexture_i5i72")
+
+[node name="bibliothèque3" type="Sprite2D" parent="objets fixes" unique_id=1784764159]
+position = Vector2(9479, 1155)
+texture = SubResource("AtlasTexture_i5i72")
+
+[node name="bibliothèque4" type="Sprite2D" parent="objets fixes" unique_id=610158412]
+position = Vector2(10479, 2122)
+texture = SubResource("AtlasTexture_i5i72")
+
+[node name="bibliothèque5" type="Sprite2D" parent="objets fixes" unique_id=618221794]
+position = Vector2(10887, 2122)
+texture = SubResource("AtlasTexture_i5i72")
+
+[node name="bibliothèque6" type="Sprite2D" parent="objets fixes" unique_id=1394720491]
+position = Vector2(11260, 851)
+texture = SubResource("AtlasTexture_i5i72")
+
+[node name="bibliothèque7" type="Sprite2D" parent="objets fixes" unique_id=902814242]
+position = Vector2(7659, 1854)
+texture = SubResource("AtlasTexture_i5i72")
+
+[node name="porte fermée" type="Sprite2D" parent="objets fixes" unique_id=24110503]
+position = Vector2(19622.002, -2627)
+scale = Vector2(0.65, 0.65)
+texture = SubResource("AtlasTexture_xvpnm")
+
+[node name="porte fermée2" type="Sprite2D" parent="objets fixes" unique_id=28250509]
+position = Vector2(21175.002, -2354.0002)
+scale = Vector2(0.65, 0.65)
+texture = SubResource("AtlasTexture_xvpnm")
+
+[node name="porte fermée4" type="Sprite2D" parent="objets fixes" unique_id=1161554229]
+position = Vector2(22332.002, -2363)
+scale = Vector2(0.65, 0.65)
+texture = SubResource("AtlasTexture_xvpnm")
+
+[node name="porte fermée5" type="Sprite2D" parent="objets fixes" unique_id=976779762]
+position = Vector2(23516.002, -2970)
+scale = Vector2(0.65, 0.65)
+texture = SubResource("AtlasTexture_xvpnm")
+
+[node name="porte fermée6" type="Sprite2D" parent="objets fixes" unique_id=328916621]
+position = Vector2(25616.8, -2537.4)
+scale = Vector2(0.65, 0.65)
+texture = SubResource("AtlasTexture_xvpnm")
+
+[node name="porte fermée7" type="Sprite2D" parent="objets fixes" unique_id=1650202418]
+position = Vector2(24972, -1597.0002)
+scale = Vector2(0.65, 0.65)
+texture = SubResource("AtlasTexture_xvpnm")
+
+[node name="porte fermée3" type="Sprite2D" parent="objets fixes" unique_id=1883051419]
+position = Vector2(24141, -1032.0001)
+scale = Vector2(0.65, 0.65)
+texture = SubResource("AtlasTexture_xvpnm")
+
+[node name="porte fermée8" type="Sprite2D" parent="objets fixes" unique_id=1774004314]
+position = Vector2(25123.8, -3149.4)
+scale = Vector2(0.65, 0.65)
+texture = SubResource("AtlasTexture_xvpnm")
+
+[node name="porte fermée10" type="Sprite2D" parent="objets fixes" unique_id=772369643]
+position = Vector2(22928.8, -2838.4)
+scale = Vector2(0.65, 0.65)
+texture = SubResource("AtlasTexture_xvpnm")
+
+[node name="porte ouverte" type="Sprite2D" parent="objets fixes" unique_id=350703386]
+position = Vector2(24395, -2691.2)
+scale = Vector2(0.72000194, 0.7058137)
+texture = SubResource("AtlasTexture_o7gma")
+
+[node name="Platform" parent="objets fixes" unique_id=1036725714 instance=ExtResource("30_q7a8t")]
+position = Vector2(15458, 614)
+can_move = false
+
+[node name="Platform2" parent="objets fixes" unique_id=899861162 instance=ExtResource("30_q7a8t")]
+position = Vector2(15458, 811)
+point1 = Vector2(15458, 811)
+point2 = Vector2(15458, 1251)
+
+[node name="Platform3" parent="objets fixes" unique_id=1676717096 instance=ExtResource("30_q7a8t")]
+position = Vector2(15458, 1447)
+can_move = false
+
+[node name="Platform13" parent="objets fixes" unique_id=428363442 instance=ExtResource("30_q7a8t")]
+position = Vector2(19634, -2313)
+can_move = false
+
+[node name="Platform12" parent="objets fixes" unique_id=1999899977 instance=ExtResource("30_q7a8t")]
+position = Vector2(19634, -1313)
+point1 = Vector2(19634, -1313)
+point2 = Vector2(19634, -2121)
+speed = 75
+
+[node name="Platform10" parent="objets fixes" unique_id=827158771 instance=ExtResource("30_q7a8t")]
+position = Vector2(17770, -1117)
+point1 = Vector2(17770, -1117)
+point2 = Vector2(19634, -1117)
+speed = 75
+one_shot = true
+
+[node name="Platform16" parent="objets fixes" unique_id=1259348249 instance=ExtResource("30_q7a8t")]
+position = Vector2(21186, -2035)
+can_move = false
+
+[node name="Platform15" parent="objets fixes" unique_id=233234293 instance=ExtResource("30_q7a8t")]
+position = Vector2(21186, -1115)
+point1 = Vector2(21186, -1115)
+point2 = Vector2(21186, -1843)
+speed = 75
+
+[node name="Platform11" parent="objets fixes" unique_id=1930551942 instance=ExtResource("30_q7a8t")]
+position = Vector2(19634, -923)
+point1 = Vector2(19634, -923)
+point2 = Vector2(21186, -923)
+speed = 75
+one_shot = true
+
+[node name="Platform20" parent="objets fixes" unique_id=1401816283 instance=ExtResource("30_q7a8t")]
+position = Vector2(24402, -2363)
+can_move = false
+
+[node name="Platform17" parent="objets fixes" unique_id=1524442348 instance=ExtResource("30_q7a8t")]
+position = Vector2(22786, -923)
+point1 = Vector2(22786, -923)
+point2 = Vector2(24402, -2171)
+speed = 150
+one_shot = true
+
+[node name="Platform14" parent="objets fixes" unique_id=1350601437 instance=ExtResource("30_q7a8t")]
+position = Vector2(21186, -731)
+point1 = Vector2(21186, -731)
+point2 = Vector2(22786, -731)
+speed = 75
+one_shot = true
+
+[node name="Platform19" parent="objets fixes" unique_id=428792275 instance=ExtResource("30_q7a8t")]
+position = Vector2(24162, -731)
+can_move = false
+
+[node name="Platform25" parent="objets fixes" unique_id=361388087 instance=ExtResource("30_q7a8t")]
+position = Vector2(25128.797, -2842.4)
+can_move = false
+
+[node name="Platform21" parent="objets fixes" unique_id=1768520870 instance=ExtResource("30_q7a8t")]
+position = Vector2(25621.797, -2230.4)
+can_move = false
+
+[node name="Platform26" parent="objets fixes" unique_id=466328358 instance=ExtResource("30_q7a8t")]
+position = Vector2(24002.799, -3392.4)
+can_move = false
+
+[node name="Platform27" parent="objets fixes" unique_id=1077108923 instance=ExtResource("30_q7a8t")]
+position = Vector2(22933.799, -2531.4)
+can_move = false
+
+[node name="Platform22" parent="objets fixes" unique_id=1015942283 instance=ExtResource("30_q7a8t")]
+position = Vector2(24981, -1286)
+can_move = false
+
+[node name="Platform23" parent="objets fixes" unique_id=1476274307 instance=ExtResource("30_q7a8t")]
+position = Vector2(23533.002, -2658.0005)
+can_move = false
+
+[node name="Platform24" parent="objets fixes" unique_id=2137587739 instance=ExtResource("30_q7a8t")]
+position = Vector2(22341.002, -2051)
+can_move = false
+
+[node name="Platform18" parent="objets fixes" unique_id=1441527924 instance=ExtResource("30_q7a8t")]
+position = Vector2(22786, -539)
+point1 = Vector2(22786, -539)
+point2 = Vector2(24162, -539)
+speed = 75
+one_shot = true
+
+[node name="Platform9" parent="objets fixes" unique_id=1783786109 instance=ExtResource("30_q7a8t")]
+position = Vector2(18434, -337)
+point1 = Vector2(18434, -337)
+point2 = Vector2(17770, -921)
+speed = 75
+
+[node name="Platform8" parent="objets fixes" unique_id=429920773 instance=ExtResource("30_q7a8t")]
+position = Vector2(17130, -145)
+point1 = Vector2(17130, -145)
+point2 = Vector2(18434, -145)
+speed = 100
+one_shot = true
+
+[node name="Platform7" parent="objets fixes" unique_id=414424947 instance=ExtResource("30_q7a8t")]
+position = Vector2(17762, 47)
+point1 = Vector2(17762, 47)
+point2 = Vector2(17130, 47)
+speed = 100
+one_shot = true
+
+[node name="Platform6" parent="objets fixes" unique_id=559486627 instance=ExtResource("30_q7a8t")]
+position = Vector2(17762, 239)
+can_move = false
+
+[node name="Platform5" parent="objets fixes" unique_id=1982385716 instance=ExtResource("30_q7a8t")]
+position = Vector2(16514, 1451)
+point1 = Vector2(16514, 1451)
+point2 = Vector2(17762, 431)
+speed = 150
+one_shot = true
+
+[node name="Platform4" parent="objets fixes" unique_id=593746817 instance=ExtResource("30_q7a8t")]
+position = Vector2(15458, 1643)
+point1 = Vector2(15458, 1643)
+point2 = Vector2(16514, 1643)
+speed = 75
+
+[node name="pilier" type="Sprite2D" parent="objets fixes" unique_id=1761242851]
+position = Vector2(15194, 853)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier17" type="Sprite2D" parent="objets fixes" unique_id=1279576393]
+position = Vector2(16056, 433)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier2" type="Sprite2D" parent="objets fixes" unique_id=319944382]
+position = Vector2(15608, 2432)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier3" type="Sprite2D" parent="objets fixes" unique_id=1963413536]
+position = Vector2(17500, 2014)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier4" type="Sprite2D" parent="objets fixes" unique_id=1448650334]
+position = Vector2(16890, 778)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier5" type="Sprite2D" parent="objets fixes" unique_id=227500349]
+position = Vector2(18852, 514)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier6" type="Sprite2D" parent="objets fixes" unique_id=129817007]
+position = Vector2(17800, -1280)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier7" type="Sprite2D" parent="objets fixes" unique_id=1077054879]
+position = Vector2(19786, -183)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier8" type="Sprite2D" parent="objets fixes" unique_id=567651040]
+position = Vector2(19437, -2103)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier9" type="Sprite2D" parent="objets fixes" unique_id=662391540]
+position = Vector2(22040, -2093)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier10" type="Sprite2D" parent="objets fixes" unique_id=425803806]
+position = Vector2(20680, -1684)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier11" type="Sprite2D" parent="objets fixes" unique_id=1970450949]
+position = Vector2(22712, -1326)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier12" type="Sprite2D" parent="objets fixes" unique_id=1772163812]
+position = Vector2(25113, -330)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier13" type="Sprite2D" parent="objets fixes" unique_id=43625867]
+position = Vector2(25866, -1033)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier14" type="Sprite2D" parent="objets fixes" unique_id=762480982]
+position = Vector2(25285, -1907)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier15" type="Sprite2D" parent="objets fixes" unique_id=20460445]
+position = Vector2(23920, -1993)
+texture = ExtResource("12_5mbm0")
+
+[node name="pilier16" type="Sprite2D" parent="objets fixes" unique_id=1893696459]
+position = Vector2(24976, -2711)
+texture = ExtResource("12_5mbm0")
+
+[node name="objets triés y" type="Node2D" parent="." unique_id=92139644]
+y_sort_enabled = true
+
+[node name="Player" parent="objets triés y" unique_id=1939621221 instance=ExtResource("1_ddnx4")]
+position = Vector2(4882, 1128)
+
+[node name="ShrodCat" parent="objets triés y" unique_id=1174409770 instance=ExtResource("14_v1xvq")]
+position = Vector2(358, 13)
+
+[node name="Botanist" parent="objets triés y" unique_id=1394255113 instance=ExtResource("5_life5")]
+position = Vector2(1260, 1150)
+
+[node name="Ticket_guy" parent="objets triés y" unique_id=1252057102 instance=ExtResource("5_t5gsb")]
+position = Vector2(1789, 174)
+
+[node name="Robot" parent="objets triés y" unique_id=206621401 instance=ExtResource("10_wcyn6")]
+position = Vector2(5348, 1021)
+sound = "machine"
+
+[node name="SadMask" parent="objets triés y" unique_id=1101962255 instance=ExtResource("17_wcyn6")]
+position = Vector2(6927, 97)
+
+[node name="HappyMask" parent="objets triés y" unique_id=1059355803 instance=ExtResource("13_plnh7")]
+position = Vector2(8147, 75)
+
+[node name="JackBox" parent="objets triés y" unique_id=1965016703 instance=ExtResource("14_6nbd4")]
+position = Vector2(10022, 1891)
+
+[node name="Reader" parent="objets triés y" unique_id=710078292 instance=ExtResource("15_ub5jd")]
+position = Vector2(11010, 2362)
+dialogue4 = Array[String](["Great! Here's a little gift for your kindness.", "Take some contact lenses. You never know when you'll need them."])
+
+[node name="Knight" parent="objets triés y" unique_id=533598530 instance=ExtResource("16_rmf57")]
+position = Vector2(8927, 1880)
+
+[node name="SirElrick" parent="objets triés y" unique_id=2111610882 instance=ExtResource("21_vpo30")]
+position = Vector2(10785, 1225)
+
+[node name="TrappedSpirits" parent="objets triés y" unique_id=1092606283 instance=ExtResource("18_5equv")]
+position = Vector2(11613, 1384)
+
+[node name="CatNip" parent="objets triés y" unique_id=453130203 instance=ExtResource("3_2sktj")]
+position = Vector2(1624, 1168)
+item_type = "catnip"
+look = Array[String](["This is catnip, the favourite herb of our feline companions."])
+interact_text = Array[String](["You tried to eat it.", "But it's not very good.", "What did you expect?"])
+pickup_text = null
+
+[node name="Sprite2D" parent="objets triés y/CatNip" index="1" unique_id=634666434]
+position = Vector2(7, 9)
+texture = SubResource("AtlasTexture_5equv")
+offset = Vector2(0, -56.79)
+
+[node name="Orbe1" parent="objets triés y" unique_id=676106946 instance=ExtResource("19_plnh7")]
+position = Vector2(5441, -44)
+interact_text = null
+
+[node name="Orbe2" parent="objets triés y" unique_id=1663957048 instance=ExtResource("19_plnh7")]
+position = Vector2(6065, -1204)
+interact_text = null
+
+[node name="Orbe3" parent="objets triés y" unique_id=64144777 instance=ExtResource("19_plnh7")]
+position = Vector2(7537, -1204)
+interact_text = null
+
+[node name="Orbe4" parent="objets triés y" unique_id=1936086275 instance=ExtResource("19_plnh7")]
+position = Vector2(8273, -1724)
+interact_text = null
+
+[node name="Typology" parent="objets triés y" unique_id=1120241206 instance=ExtResource("3_2sktj")]
+position = Vector2(11217, 1119)
+item_type = "book1"
+look = Array[String](["\"Typology\", by Pexjp (what a strange name)"])
+interact_text = Array[String](["You open the book and read some lines.", "It's about classifiaction that categorizes entities based on shared characteristics or something like that."])
+pickup_text = null
+
+[node name="Sprite2D" parent="objets triés y/Typology" index="1" unique_id=634666434]
+position = Vector2(-2, -14)
+texture = SubResource("AtlasTexture_s14fl")
+offset = Vector2(0, 31.06)
+
+[node name="Languages" parent="objets triés y" unique_id=1621346360 instance=ExtResource("3_2sktj")]
+process_mode = 4
+visible = false
+position = Vector2(7735, 2071)
+item_type = "book2"
+look = Array[String](["\"Dead languages\", by ####"])
+interact_text = Array[String](["you read some lines.", "Exactly what you think, it's just languages that nobody use anymore."])
+pickup_text = null
+
+[node name="Sprite2D" parent="objets triés y/Languages" index="1" unique_id=634666434]
+position = Vector2(-3.9998093, -36.99995)
+scale = Vector2(0.85625005, 0.85625)
+texture = SubResource("AtlasTexture_nsbuw")
+offset = Vector2(0, 34)
+
+[node name="guidebook" parent="objets triés y" unique_id=2044824593 instance=ExtResource("3_2sktj")]
+position = Vector2(9855, 2740)
+item_type = "book3"
+look = Array[String](["\"How to beat Five nights At Greeny's\", by Salamignon"])
+interact_text = Array[String](["you read some lines.", "It's a guide on how to beat a terrible rip-off horror game that's not even scary.", "and they even made sequels apparently."])
+pickup_text = null
+
+[node name="Sprite2D" parent="objets triés y/guidebook" index="1" unique_id=634666434]
+position = Vector2(-0.99977875, -21.000113)
+scale = Vector2(0.90504813, 0.9050481)
+texture = SubResource("AtlasTexture_pyf7s")
+offset = Vector2(0, 27.125)
+
+[node name="Nymph book" parent="objets triés y" unique_id=1595680200 instance=ExtResource("3_2sktj")]
+process_mode = 4
+visible = false
+position = Vector2(8898, 1379)
+item_type = "book4"
+look = Array[String](["\"The legend of the nymph\""])
+interact_text = Array[String](["you read some lines.", "This book tells the story of the nymph and how to find them.", "But some of the pages, including the last one, were torn out."])
+pickup_text = null
+
+[node name="Sprite2D" parent="objets triés y/Nymph book" index="1" unique_id=634666434]
+position = Vector2(4, -22)
+texture = SubResource("AtlasTexture_5ixym")
+offset = Vector2(0, 51.955)
+
+[node name="ticket" type="Area2D" parent="objets triés y" unique_id=264957560]
+visible = false
+position = Vector2(1969, -144)
+script = ExtResource("5_pc7ah")
+
+[node name="Sprite2D" type="Sprite2D" parent="objets triés y/ticket" unique_id=262303792]
+position = Vector2(0.9423828, -0.625)
+scale = Vector2(0.22355768, 0.2421875)
+texture = SubResource("AtlasTexture_q7a8t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objets triés y/ticket" unique_id=1240347247]
+shape = SubResource("RectangleShape2D_pc7ah")
+
+[node name="buisson" type="Sprite2D" parent="objets triés y" unique_id=317520800]
+position = Vector2(-921, 254)
+texture = SubResource("AtlasTexture_1fnmw")
+offset = Vector2(0, -166.6)
+
+[node name="buisson2" type="Sprite2D" parent="objets triés y" unique_id=352892000]
+position = Vector2(1996, 458)
+texture = SubResource("AtlasTexture_s3syr")
+offset = Vector2(0, -166.6)
+
+[node name="herbe" type="Sprite2D" parent="objets triés y" unique_id=1353251395]
+position = Vector2(-506, -112)
+texture = SubResource("AtlasTexture_6ec1n")
+offset = Vector2(0, -47.415)
+
+[node name="herbe2" type="Sprite2D" parent="objets triés y" unique_id=1390607594]
+position = Vector2(325, 133)
+texture = SubResource("AtlasTexture_hc0wr")
+offset = Vector2(0, -47.415)
+
+[node name="herbe3" type="Sprite2D" parent="objets triés y" unique_id=139467161]
+position = Vector2(-667, 312)
+texture = SubResource("AtlasTexture_v1xvq")
+offset = Vector2(0, -47.415)
+
+[node name="herbe4" type="Sprite2D" parent="objets triés y" unique_id=1018672078]
+position = Vector2(-200, 148)
+texture = SubResource("AtlasTexture_wcyn6")
+offset = Vector2(0, -47.415)
+
+[node name="herbe5" type="Sprite2D" parent="objets triés y" unique_id=29519988]
+position = Vector2(-408, -248)
+texture = SubResource("AtlasTexture_v1xvq")
+offset = Vector2(0, -47.415)
+
+[node name="herbe6" type="Sprite2D" parent="objets triés y" unique_id=2011398556]
+position = Vector2(475, 2)
+texture = SubResource("AtlasTexture_6ec1n")
+offset = Vector2(0, -47.415)
+
+[node name="herbe7" type="Sprite2D" parent="objets triés y" unique_id=1117729916]
+position = Vector2(484, 417)
+texture = SubResource("AtlasTexture_hc0wr")
+offset = Vector2(0, -47.415)
+
+[node name="herbe9" type="Sprite2D" parent="objets triés y" unique_id=2117698486]
+position = Vector2(902, 34)
+texture = SubResource("AtlasTexture_hc0wr")
+offset = Vector2(0, -47.415)
+
+[node name="herbe13" type="Sprite2D" parent="objets triés y" unique_id=2105698670]
+position = Vector2(1585, 908)
+texture = SubResource("AtlasTexture_hc0wr")
+offset = Vector2(0, -47.415)
+
+[node name="herbe8" type="Sprite2D" parent="objets triés y" unique_id=1658540669]
+position = Vector2(1333, 462)
+texture = SubResource("AtlasTexture_wcyn6")
+offset = Vector2(0, -47.415)
+
+[node name="herbe10" type="Sprite2D" parent="objets triés y" unique_id=1720073637]
+position = Vector2(1583, -133)
+texture = SubResource("AtlasTexture_6ec1n")
+offset = Vector2(0, -47.415)
+
+[node name="herbe11" type="Sprite2D" parent="objets triés y" unique_id=2091916133]
+position = Vector2(1266, 197)
+texture = SubResource("AtlasTexture_6ec1n")
+offset = Vector2(0, -47.415)
+
+[node name="herbe12" type="Sprite2D" parent="objets triés y" unique_id=464556944]
+position = Vector2(740, 1202)
+texture = SubResource("AtlasTexture_6ec1n")
+offset = Vector2(0, -47.415)
+
+[node name="herbechat" type="Sprite2D" parent="objets triés y" unique_id=1044147936]
+position = Vector2(1519, 1164)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_f4lsy")
+offset = Vector2(0, -63.51)
+
+[node name="herbechat2" type="Sprite2D" parent="objets triés y" unique_id=1351414883]
+position = Vector2(1684, 1200)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_f4lsy")
+offset = Vector2(0, -63.51)
+
+[node name="herbechat3" type="Sprite2D" parent="objets triés y" unique_id=1184842837]
+position = Vector2(1641, 1146)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_f4lsy")
+offset = Vector2(0, -63.51)
+
+[node name="herbechat4" type="Sprite2D" parent="objets triés y" unique_id=943667524]
+position = Vector2(1528, 1228)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_f4lsy")
+offset = Vector2(0, -63.51)
+
+[node name="EntreeTempleFront" type="Sprite2D" parent="objets triés y" unique_id=26333933]
+position = Vector2(1958, 49)
+texture = ExtResource("24_s14fl")
+offset = Vector2(0, -90.27)
+
+[node name="ColorRect" type="ColorRect" parent="objets triés y" unique_id=1436770570]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1970.0002
+offset_top = 47.99996
+offset_right = 2235.0396
+offset_bottom = 119.88326
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -1.2023592
+size_flags_horizontal = 4
+color = Color(0.4745098, 0.45490196, 0.6431373, 1)
+
+[node name="Statue" type="Sprite2D" parent="objets triés y" unique_id=790298701]
+position = Vector2(9139, 1855)
+scale = Vector2(1.1875596, 1.1875596)
+texture = SubResource("AtlasTexture_5mbm0")
+offset = Vector2(0, -217.115)
+
+[node name="feuilles6" type="Sprite2D" parent="." unique_id=1591964933]
+position = Vector2(-198, -465)
+texture = SubResource("AtlasTexture_xxtmf")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles2" type="Sprite2D" parent="." unique_id=301144161]
+position = Vector2(174, -390)
+texture = SubResource("AtlasTexture_rwuu8")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles3" type="Sprite2D" parent="." unique_id=1044081715]
+position = Vector2(-914, -383)
+texture = SubResource("AtlasTexture_rwuu8")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles4" type="Sprite2D" parent="." unique_id=585050778]
+position = Vector2(-722, 705)
+texture = SubResource("AtlasTexture_rwuu8")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles5" type="Sprite2D" parent="." unique_id=1167621621]
+position = Vector2(546, 746)
+texture = SubResource("AtlasTexture_rwuu8")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles7" type="Sprite2D" parent="." unique_id=1530990404]
+position = Vector2(-1083, 548)
+texture = SubResource("AtlasTexture_xxtmf")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles8" type="Sprite2D" parent="." unique_id=778774409]
+position = Vector2(-239, 764)
+texture = SubResource("AtlasTexture_xxtmf")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles21" type="Sprite2D" parent="." unique_id=680627492]
+position = Vector2(351, 960)
+texture = SubResource("AtlasTexture_xxtmf")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles26" type="Sprite2D" parent="." unique_id=117077887]
+position = Vector2(47, 1390)
+texture = SubResource("AtlasTexture_rwuu8")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles22" type="Sprite2D" parent="." unique_id=421039707]
+position = Vector2(276, 1578)
+texture = SubResource("AtlasTexture_xxtmf")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles25" type="Sprite2D" parent="." unique_id=517010801]
+position = Vector2(586, 1606)
+texture = SubResource("AtlasTexture_rwuu8")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles23" type="Sprite2D" parent="." unique_id=558377531]
+position = Vector2(855, 1589)
+texture = SubResource("AtlasTexture_xxtmf")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles24" type="Sprite2D" parent="." unique_id=592149195]
+position = Vector2(1777, 1570)
+texture = SubResource("AtlasTexture_xxtmf")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles9" type="Sprite2D" parent="." unique_id=731829981]
+position = Vector2(114, 748)
+texture = SubResource("AtlasTexture_xxtmf")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles13" type="Sprite2D" parent="." unique_id=216366380]
+position = Vector2(1278, -611)
+texture = SubResource("AtlasTexture_rwuu8")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles10" type="Sprite2D" parent="." unique_id=902629344]
+position = Vector2(1043, -502)
+texture = SubResource("AtlasTexture_xxtmf")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles12" type="Sprite2D" parent="." unique_id=548516595]
+position = Vector2(807, -411)
+texture = SubResource("AtlasTexture_rwuu8")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles15" type="Sprite2D" parent="." unique_id=1749449715]
+position = Vector2(921, 713)
+texture = SubResource("AtlasTexture_xxtmf")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles16" type="Sprite2D" parent="." unique_id=1841113204]
+position = Vector2(1895, 632)
+texture = SubResource("AtlasTexture_rwuu8")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles17" type="Sprite2D" parent="." unique_id=975965612]
+position = Vector2(2064, 515)
+texture = SubResource("AtlasTexture_xxtmf")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles27" type="Sprite2D" parent="." unique_id=32530194]
+position = Vector2(2324, 690)
+texture = SubResource("AtlasTexture_rwuu8")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles" type="Sprite2D" parent="." unique_id=1856689076]
+position = Vector2(662, -270)
+texture = SubResource("AtlasTexture_rwuu8")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles18" type="Sprite2D" parent="." unique_id=153923657]
+position = Vector2(1903, 806)
+texture = SubResource("AtlasTexture_rwuu8")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles20" type="Sprite2D" parent="." unique_id=2009743223]
+position = Vector2(2000, 945)
+texture = SubResource("AtlasTexture_xxtmf")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles14" type="Sprite2D" parent="." unique_id=51591337]
+position = Vector2(2022, 1123)
+texture = SubResource("AtlasTexture_rwuu8")
+offset = Vector2(0, -200.59)
+
+[node name="feuilles19" type="Sprite2D" parent="." unique_id=1816789001]
+position = Vector2(1351, 1619)
+texture = SubResource("AtlasTexture_rwuu8")
+offset = Vector2(0, -200.59)
+
+[node name="Inventory" parent="." unique_id=8117817 instance=ExtResource("11_1fnmw")]
+visible = false
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1009157002]
+show_behind_parent = true
+position = Vector2(6060.5864, 749.9125)
+rotation = -1.4153095
+scale = Vector2(17.322596, 5.7739854)
+texture = SubResource("GradientTexture2D_wcyn6")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=2072716503]
+show_behind_parent = true
+position = Vector2(15571.002, 403.99988)
+rotation = -1.4153095
+scale = Vector2(14.825574, 5.7739854)
+texture = SubResource("GradientTexture2D_wcyn6")
+
+[node name="PointLight2D4" type="PointLight2D" parent="." unique_id=383535376]
+show_behind_parent = true
+position = Vector2(24592.938, -2968.6023)
+rotation = -1.4153095
+scale = Vector2(20.664837, 5.7739854)
+texture = SubResource("GradientTexture2D_wcyn6")
+
+[node name="PointLight2D5" type="PointLight2D" parent="." unique_id=175350995]
+show_behind_parent = true
+position = Vector2(24178.656, -3005.462)
+rotation = -1.8918638
+scale = Vector2(20.999239, 5.7739854)
+texture = SubResource("GradientTexture2D_wcyn6")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=126475551]
+
+[node name="Fade" parent="Camera2D" unique_id=446213603 instance=ExtResource("12_rwuu8")]
+visible = false
+offset_left = -972.5
+offset_top = -545.5
+offset_right = 972.5
+offset_bottom = 545.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="zone1" to="." method="_on_zone_1_body_entered"]
+[connection signal="body_entered" from="zone2" to="." method="_on_zone_2_body_entered"]
+[connection signal="body_entered" from="zone3" to="." method="_on_zone_3_body_entered"]
+[connection signal="body_entered" from="transition" to="." method="_on_transition_body_entered"]
+[connection signal="body_entered" from="Area1Cam" to="Area1Cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2Cam" to="Area2Cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area3Cam" to="Area3Cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area4Cam" to="Area4Cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area5Cam" to="Area5Cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area6Cam" to="Area6Cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area7Cam" to="Area7Cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area8Cam" to="Area8Cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area9Cam" to="Area9Cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area10Cam" to="Area10Cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area11Cam" to="Area11Cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area12Cam" to="Area12Cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area13cam" to="Area13cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area14cam" to="Area14cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area15cam" to="Area15cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area16cam" to="Area16cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area17cam" to="Area17cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area18cam" to="Area18cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area19cam" to="Area19cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area20cam" to="Area20cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area21cam" to="Area21cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area22cam" to="Area22cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area23cam" to="Area23cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area24cam" to="Area24cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area25cam" to="Area25cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area26cam" to="Area26cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area27cam" to="Area27cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area28cam" to="Area28cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area29cam" to="Area29cam" method="_on_body_entered"]
+[connection signal="body_entered" from="Area30cam" to="Area30cam" method="_on_body_entered"]
+[connection signal="new_item" from="objets triés y/Player" to="Inventory" method="_on_player_new_item"]
+[connection signal="finished_interacting" from="objets triés y/ShrodCat" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/ShrodCat" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="item_to_player" from="objets triés y/ShrodCat" to="objets triés y/Player" method="_on_item_item_to_player"]
+[connection signal="finished_interacting" from="objets triés y/Botanist" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/Botanist" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="activate_gate" from="objets triés y/Ticket_guy" to="transition" method="_on_ticket_guy_activate_gate"]
+[connection signal="finished_interacting" from="objets triés y/Ticket_guy" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="hide_ticket" from="objets triés y/Ticket_guy" to="objets triés y/ticket" method="_on_ticket_guy_hide_ticket"]
+[connection signal="interacting" from="objets triés y/Ticket_guy" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="show_ticket" from="objets triés y/Ticket_guy" to="objets triés y/ticket" method="_on_ticket_guy_show_ticket"]
+[connection signal="activate_gate" from="objets triés y/Robot" to="." method="_on_robot_activate_gate"]
+[connection signal="finished_interacting" from="objets triés y/Robot" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/Robot" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="item_to_player" from="objets triés y/Robot" to="objets triés y/Player" method="_on_item_item_to_player"]
+[connection signal="finished_interacting" from="objets triés y/SadMask" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/SadMask" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="finished_interacting" from="objets triés y/HappyMask" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/HappyMask" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="item_to_player" from="objets triés y/HappyMask" to="objets triés y/Player" method="_on_item_item_to_player"]
+[connection signal="finished_interacting" from="objets triés y/JackBox" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/JackBox" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="item_to_player" from="objets triés y/JackBox" to="objets triés y/Player" method="_on_item_item_to_player"]
+[connection signal="finished_interacting" from="objets triés y/Reader" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/Reader" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="item_to_player" from="objets triés y/Reader" to="objets triés y/Player" method="_on_item_item_to_player"]
+[connection signal="show_books" from="objets triés y/Reader" to="." method="_on_reader_show_books"]
+[connection signal="finished_interacting" from="objets triés y/Knight" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/Knight" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="item_to_player" from="objets triés y/Knight" to="objets triés y/Player" method="_on_item_item_to_player"]
+[connection signal="finished_interacting" from="objets triés y/SirElrick" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/SirElrick" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="item_to_player" from="objets triés y/SirElrick" to="objets triés y/Player" method="_on_item_item_to_player"]
+[connection signal="finished_interacting" from="objets triés y/TrappedSpirits" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/TrappedSpirits" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="item_to_player" from="objets triés y/TrappedSpirits" to="objets triés y/Player" method="_on_item_item_to_player"]
+[connection signal="player_in_abyss" from="objets triés y/TrappedSpirits" to="." method="_on_trapped_spirits_player_in_abyss"]
+[connection signal="finished_interacting" from="objets triés y/CatNip" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/CatNip" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="item_to_player" from="objets triés y/CatNip" to="objets triés y/Player" method="_on_item_item_to_player"]
+[connection signal="finished_interacting" from="objets triés y/Orbe1" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/Orbe1" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="finished_interacting" from="objets triés y/Orbe2" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/Orbe2" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="finished_interacting" from="objets triés y/Orbe3" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/Orbe3" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="finished_interacting" from="objets triés y/Orbe4" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/Orbe4" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="finished_interacting" from="objets triés y/Typology" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/Typology" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="item_to_player" from="objets triés y/Typology" to="objets triés y/Player" method="_on_item_item_to_player"]
+[connection signal="finished_interacting" from="objets triés y/Languages" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/Languages" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="item_to_player" from="objets triés y/Languages" to="objets triés y/Player" method="_on_item_item_to_player"]
+[connection signal="finished_interacting" from="objets triés y/guidebook" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/guidebook" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="item_to_player" from="objets triés y/guidebook" to="objets triés y/Player" method="_on_item_item_to_player"]
+[connection signal="finished_interacting" from="objets triés y/Nymph book" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="interacting" from="objets triés y/Nymph book" to="objets triés y/Player" method="_on_node_2d_interacting"]
+[connection signal="item_to_player" from="objets triés y/Nymph book" to="objets triés y/Player" method="_on_item_item_to_player"]
+[connection signal="item_to_player" from="objets triés y/ticket" to="objets triés y/Player" method="_on_item_item_to_player"]
+[connection signal="mouse_entered" from="objets triés y/ticket" to="objets triés y/ticket" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="objets triés y/ticket" to="objets triés y/ticket" method="_on_mouse_exited"]
+[connection signal="close_choosing" from="Inventory" to="objets triés y/Player" method="_on_inventory_close_choosing"]
+[connection signal="finished_interacting" from="Inventory" to="objets triés y/Player" method="_on_node_2d_finished_interacting"]
+[connection signal="give_item" from="Inventory" to="objets triés y/Player" method="_on_inventory_give_item"]
+[connection signal="interacting" from="Inventory" to="objets triés y/Player" method="_on_node_2d_interacting"]
+
+[editable path="objets triés y/CatNip"]
+[editable path="objets triés y/Typology"]
+[editable path="objets triés y/Languages"]
+[editable path="objets triés y/guidebook"]
+[editable path="objets triés y/Nymph book"]

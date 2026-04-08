@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bjhkuisl0xjaw"]
+
+[ext_resource type="Script" uid="uid://c0xr710re6may" path="res://Scripts/npc.gd" id="1_mjswn"]
+[ext_resource type="Script" uid="uid://d23jusyi3vv2" path="res://Scripts/interactible.gd" id="2_4qhdf"]
+[ext_resource type="Texture2D" uid="uid://c3turi4cx5i6d" path="res://assets/knights.png" id="3_4qhdf"]
+[ext_resource type="Script" uid="uid://ctdvchsocl7gw" path="res://Scripts/bounce.gd" id="4_pu8gf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pu8gf"]
+radius = 97.128784
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu8gf"]
+atlas = ExtResource("3_4qhdf")
+region = Rect2(720, 320, 488, 504)
+
+[node name="Node2D" type="Node2D" unique_id=2111610882]
+script = ExtResource("1_mjswn")
+needed_item = "dreamcatcher"
+needed_item2 = "null"
+item_to_give = "talisman"
+dialogue1 = Array[String](["The knight over there told you he wanted my talisman?", "Well I'm not giving it back!", "He knows I need it to repel curses!", "Unless you find something more powerful, I'll keep it!"])
+dialogue2 = Array[String](["Wait, is that a dreamcatcher?", "How did you manage to find one?", "Ok, you won, I'll give you the talisman, but this thing you gave me is way more powerful!"])
+dialogue3 = Array[String](["I can't believe I got a dreamcatcher!"])
+dialogue_not_for_me = Array[String](["No thanks, I don't need this."])
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2019850589]
+collision_layer = 2
+script = ExtResource("2_4qhdf")
+id = "character"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1665221486]
+position = Vector2(-1, -23)
+shape = SubResource("CircleShape2D_pu8gf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=951487179]
+scale = Vector2(0.6, 0.6)
+texture = SubResource("AtlasTexture_pu8gf")
+offset = Vector2(-36.775, -237.63)
+script = ExtResource("4_pu8gf")
+
+[connection signal="give_item" from="Area2D" to="." method="_on_area_2d_give_item"]
+[connection signal="talk" from="Area2D" to="." method="_on_area_2d_talk"]

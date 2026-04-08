@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dil34yip3jt8h"]
+
+[ext_resource type="Script" uid="uid://c0xr710re6may" path="res://Scripts/npc.gd" id="1_m28ts"]
+[ext_resource type="Script" uid="uid://d23jusyi3vv2" path="res://Scripts/interactible.gd" id="2_go0nx"]
+[ext_resource type="Texture2D" uid="uid://cogl3q335t8hk" path="res://assets/sprite_sheets/ShrodCat_idle.png" id="3_go0nx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_866gq"]
+radius = 143.01399
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_866gq"]
+atlas = ExtResource("3_go0nx")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa06s"]
+atlas = ExtResource("3_go0nx")
+region = Rect2(1080, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbl3f"]
+atlas = ExtResource("3_go0nx")
+region = Rect2(2160, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jmg2"]
+atlas = ExtResource("3_go0nx")
+region = Rect2(0, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scm5g"]
+atlas = ExtResource("3_go0nx")
+region = Rect2(1080, 1080, 1080, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjd22"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_866gq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa06s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbl3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jmg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scm5g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1174409770]
+script = ExtResource("1_m28ts")
+needed_item = "catnip"
+needed_item2 = "null"
+item_to_give = "false_ticket"
+dialogue1 = Array[String](["Are you searching for the nymph?", "You'll need a ticket for that", "Fortunately for you, I got one.", "But... It won't be free."])
+dialogue2 = Array[String](["Hey! Is that catnip?", "You can get your ticket, here.", "Now give me that!", "Oh! and one last thing.", "The guy who keeps the entrance always talks nonsense.", "When he talks to you, you should really GET everything he says."])
+dialogue3 = Array[String](["Good luck finding the nymph."])
+dialogue_not_for_me = Array[String](["This is not enough for the ticket. Come back with something else."])
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1214765431]
+collision_layer = 2
+script = ExtResource("2_go0nx")
+id = "character"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2098499259]
+shape = SubResource("CircleShape2D_866gq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=76157401]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_cjd22")
+autoplay = "default"
+frame_progress = 0.7881538
+offset = Vector2(0, -289.755)
+
+[connection signal="give_item" from="Area2D" to="." method="_on_area_2d_give_item"]
+[connection signal="talk" from="Area2D" to="." method="_on_area_2d_talk"]

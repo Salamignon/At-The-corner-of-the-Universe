@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://rtjeetqjods"]
+
+[ext_resource type="Script" uid="uid://c0xr710re6may" path="res://Scripts/npc.gd" id="1_wsc0q"]
+[ext_resource type="Script" uid="uid://d23jusyi3vv2" path="res://Scripts/interactible.gd" id="2_x3qnx"]
+[ext_resource type="Texture2D" uid="uid://c3turi4cx5i6d" path="res://assets/knights.png" id="3_x3qnx"]
+[ext_resource type="Script" uid="uid://ctdvchsocl7gw" path="res://Scripts/bounce.gd" id="4_kd7p6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kd7p6"]
+radius = 91.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd7p6"]
+atlas = ExtResource("3_x3qnx")
+region = Rect2(24, 80, 568, 880)
+
+[node name="Node2D" type="Node2D" unique_id=533598530]
+script = ExtResource("1_wsc0q")
+needed_item = "talisman"
+needed_item2 = "null"
+item_to_give = "paper"
+dialogue1 = Array[String](["Excuse me little critter, have you seen by any chance my comrade sir Elrick?", "He took my talisman and I really need it.", "If you find him, tell him to give it back to me."])
+dialogue2 = Array[String](["You got it!", "Well, in gratitude for your act, I will tell you the secret for finding the nymph.", "You need to break the ground and jump into the abyss.", "Wait, I'll write it on paper so you won't forget.", "Give this to someone who has a groundbreaking personality."])
+dialogue3 = Array[String](["Good luck for your quest, brave critter!"])
+dialogue_not_for_me = Array[String](["This is not my talisman, keep it for you."])
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2145914132]
+collision_layer = 2
+script = ExtResource("2_x3qnx")
+id = "character"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=133751089]
+shape = SubResource("CircleShape2D_kd7p6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1294301456]
+scale = Vector2(0.6, 0.6)
+texture = SubResource("AtlasTexture_kd7p6")
+offset = Vector2(0, -406.115)
+script = ExtResource("4_kd7p6")
+
+[connection signal="give_item" from="Area2D" to="." method="_on_area_2d_give_item"]
+[connection signal="talk" from="Area2D" to="." method="_on_area_2d_talk"]

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c6aoy71k36652"]
+
+[ext_resource type="Script" uid="uid://c0xr710re6may" path="res://Scripts/npc.gd" id="1_ekkyf"]
+[ext_resource type="Script" uid="uid://d23jusyi3vv2" path="res://Scripts/interactible.gd" id="2_8ybcp"]
+[ext_resource type="Texture2D" uid="uid://b5mnnhoxsise8" path="res://assets/jackbox.png" id="3_g42v5"]
+[ext_resource type="Script" uid="uid://ci1xv31m3h4x3" path="res://Scripts/bounce_myself.gd" id="4_552v5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ybcp"]
+radius = 161.37534
+
+[node name="Node2D" type="Node2D" unique_id=1965016703]
+script = ExtResource("1_ekkyf")
+needed_item = "contact lens"
+needed_item2 = "null"
+item_to_give = "dreamcatcher"
+dialogue1 = Array[String](["Hi there.", "I went here for my eye problem.", "But I forgot my contact lens.", "I would be really grateful if you found me one cus I can't see anything.", "I don't even know if I'm talking to somebody.", "Are you real?"])
+dialogue2 = Array[String](["Wow, you really found some lenses? Thank you!", "I have a dreamcatcher if you want, take it."])
+dialogue3 = Array[String](["Thanks! I really needed them."])
+dialogue_not_for_me = Array[String](["It wont help me with my eye."])
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1514667814]
+collision_layer = 2
+script = ExtResource("2_8ybcp")
+id = "character"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=987615216]
+position = Vector2(17, -29)
+shape = SubResource("CircleShape2D_8ybcp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=759753560]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_g42v5")
+offset = Vector2(0, -177.49)
+script = ExtResource("4_552v5")
+
+[connection signal="give_item" from="Area2D" to="." method="_on_area_2d_give_item"]
+[connection signal="talk" from="Area2D" to="." method="_on_area_2d_talk"]

@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://ekogdtw1dssl"]
+
+[ext_resource type="Script" uid="uid://c0xr710re6may" path="res://Scripts/npc.gd" id="1_j3ufk"]
+[ext_resource type="Script" uid="uid://d23jusyi3vv2" path="res://Scripts/interactible.gd" id="2_d7m3r"]
+[ext_resource type="Texture2D" uid="uid://c5su0ygv241rh" path="res://assets/sprite_sheets/botanist_idle.png" id="3_4ro48"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ro48"]
+radius = 132.03409
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igj04"]
+atlas = ExtResource("3_4ro48")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jw1o"]
+atlas = ExtResource("3_4ro48")
+region = Rect2(3240, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i148b"]
+atlas = ExtResource("3_4ro48")
+region = Rect2(2160, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyqgt"]
+atlas = ExtResource("3_4ro48")
+region = Rect2(1080, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adarq"]
+atlas = ExtResource("3_4ro48")
+region = Rect2(2160, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex2u0"]
+atlas = ExtResource("3_4ro48")
+region = Rect2(1080, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyq70"]
+atlas = ExtResource("3_4ro48")
+region = Rect2(0, 1080, 1080, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_liupm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igj04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jw1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i148b")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_cyqgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adarq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex2u0")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_pyq70")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1394255113]
+script = ExtResource("1_j3ufk")
+needed_item = "null"
+needed_item2 = "null"
+dialogue1 = Array[String](["I came here in search of flowers.", "But I havent seen anything for now...", "Except these catnip plants right there."])
+dialogue_not_for_me = Array[String](["What's that?", "It's not a flower if you wanted to know."])
+
+[node name="Area2D" type="Area2D" parent="." unique_id=910379793]
+collision_layer = 2
+script = ExtResource("2_d7m3r")
+id = "character"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1844336616]
+shape = SubResource("CircleShape2D_4ro48")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=37133260]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_liupm")
+autoplay = "default"
+frame = 1
+frame_progress = 0.59215
+offset = Vector2(-46.93, -194.84)
+
+[connection signal="give_item" from="Area2D" to="." method="_on_area_2d_give_item"]
+[connection signal="talk" from="Area2D" to="." method="_on_area_2d_talk"]

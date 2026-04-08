@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://b1pgbqwxulped"]
+
+[ext_resource type="Texture2D" uid="uid://barq67eed08is" path="res://icon.svg" id="1_n1mjd"]
+[ext_resource type="Script" uid="uid://rxtk4nhbg427" path="res://Scripts/player.gd" id="1_o6osf"]
+[ext_resource type="Script" uid="uid://e7wia3xfrdv1" path="res://Scripts/roue_d'actions.gd" id="3_j02ly"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j02ly"]
+radius = 54.037025
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o6osf"]
+radius = 56.008926
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j02ly"]
+radius = 48.80493
+height = 193.75912
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1939621221]
+collision_layer = 4
+script = ExtResource("1_o6osf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=762907849]
+position = Vector2(0, -64)
+texture = ExtResource("1_n1mjd")
+
+[node name="AreaBox" type="Area2D" parent="." unique_id=787780598]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBox" unique_id=2073991672]
+position = Vector2(0, -19)
+shape = SubResource("CircleShape2D_j02ly")
+debug_color = Color(0.4984541, 0.5819727, 0.016774336, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173422410]
+position = Vector2(0, -19)
+shape = SubResource("CircleShape2D_o6osf")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1697590346]
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="Roue d\'actions" type="Node2D" parent="." unique_id=1434524282]
+script = ExtResource("3_j02ly")
+
+[node name="Area2D" type="Area2D" parent="Roue d\'actions" unique_id=227776783]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roue d\'actions/Area2D" unique_id=755124002]
+position = Vector2(-178.99998, -151)
+rotation = 0.31060255
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_j02ly")
+debug_color = Color(0.96, 0, 0.08000015, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Roue d\'actions/Area2D" unique_id=86223188]
+position = Vector2(-102, -228)
+rotation = 1.0876174
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_j02ly")
+debug_color = Color(0.96, 0, 0.08000015, 0.41960785)
+
+[node name="Button" type="Button" parent="Roue d\'actions" unique_id=940030858]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -108.0
+offset_top = -275.0
+offset_right = -43.0
+offset_bottom = -210.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+keep_pressed_outside = true
+
+[node name="Button2" type="Button" parent="Roue d\'actions" unique_id=9151512]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -227.0
+offset_right = -123.0
+offset_bottom = -162.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+keep_pressed_outside = true
+
+[node name="Button3" type="Button" parent="Roue d\'actions" unique_id=1422109386]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+offset_top = -147.0
+offset_right = -163.0
+offset_bottom = -82.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+keep_pressed_outside = true
+
+[node name="Label" type="Label" parent="." unique_id=1757085926]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="area_entered" from="AreaBox" to="Roue d\'actions" method="_on_area_box_area_entered"]
+[connection signal="area_exited" from="AreaBox" to="Roue d\'actions" method="_on_area_box_area_exited"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
+[connection signal="mouse_entered" from="Roue d\'actions/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Roue d\'actions/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Roue d\'actions/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Roue d\'actions/Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Roue d\'actions/Button" to="Roue d\'actions" method="_on_button_pressed"]
+[connection signal="mouse_entered" from="Roue d\'actions/Button2" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Roue d\'actions/Button2" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Roue d\'actions/Button2" to="Roue d\'actions" method="_on_button_2_pressed"]
+[connection signal="mouse_entered" from="Roue d\'actions/Button3" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Roue d\'actions/Button3" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Roue d\'actions/Button3" to="Roue d\'actions" method="_on_button_3_pressed"]

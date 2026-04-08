@@ -1,0 +1,269 @@
+[gd_scene format=3 uid="uid://crd7qu5tlcbtm"]
+
+[ext_resource type="Script" uid="uid://dsb78s36idd3q" path="res://Scripts/inventory.gd" id="1_tqoft"]
+[ext_resource type="Texture2D" uid="uid://bmrnbl8q1isuh" path="res://assets/ui.png" id="2_jr0f2"]
+[ext_resource type="Texture2D" uid="uid://bs4w3pku2fqr8" path="res://assets/items.png" id="3_jr0f2"]
+[ext_resource type="Script" uid="uid://euoqe3pbcvi2" path="res://Scripts/inventory_item.gd" id="4_p0hev"]
+[ext_resource type="AudioStream" uid="uid://cti88p0ee4386" path="res://sounds/inventory_open.mp3" id="5_2m21g"]
+[ext_resource type="AudioStream" uid="uid://4enk0e3o5m4b" path="res://sounds/close_inventory.mp3" id="6_xqftv"]
+[ext_resource type="AudioStream" uid="uid://d0wyuhlcvrk5i" path="res://sounds/new_item.mp3" id="7_xmnox"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0hev"]
+atlas = ExtResource("3_jr0f2")
+region = Rect2(104, 104, 336, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q38ey"]
+atlas = ExtResource("3_jr0f2")
+region = Rect2(160, 368, 224, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etbpg"]
+atlas = ExtResource("3_jr0f2")
+region = Rect2(200, 536, 248, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m21g"]
+atlas = ExtResource("3_jr0f2")
+region = Rect2(200, 816, 232, 152)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqftv"]
+atlas = ExtResource("3_jr0f2")
+region = Rect2(544, 176, 272, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmnox"]
+atlas = ExtResource("3_jr0f2")
+region = Rect2(624, 800, 200, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut6yb"]
+atlas = ExtResource("3_jr0f2")
+region = Rect2(552, 624, 184, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jl1d"]
+atlas = ExtResource("3_jr0f2")
+region = Rect2(488, 400, 312, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fylby"]
+atlas = ExtResource("3_jr0f2")
+region = Rect2(904, 208, 176, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63s8d"]
+atlas = ExtResource("3_jr0f2")
+region = Rect2(896, 336, 304, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0461f"]
+atlas = ExtResource("3_jr0f2")
+region = Rect2(976, 616, 272, 344)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spbj3"]
+atlas = ExtResource("3_jr0f2")
+region = Rect2(1272, 256, 264, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqoft"]
+atlas = ExtResource("2_jr0f2")
+region = Rect2(16, 64, 360, 296)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr0f2"]
+atlas = ExtResource("2_jr0f2")
+region = Rect2(396, 64, 360, 296)
+
+[node name="Control" type="CanvasLayer" unique_id=937656415]
+script = ExtResource("1_tqoft")
+
+[node name="Control" type="Control" parent="." unique_id=1616154163]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=690740749]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 52.0
+offset_right = 1219.0
+offset_bottom = 196.0
+color = Color(0.31, 0.19633333, 0, 0.79607844)
+
+[node name="Button" type="Button" parent="Control" unique_id=1819153328]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 63.0
+offset_right = 404.0
+offset_bottom = 187.0
+mouse_default_cursor_shape = 2
+
+[node name="Button2" type="Button" parent="Control" unique_id=175078457]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 63.0
+offset_right = 564.0
+offset_bottom = 187.0
+mouse_default_cursor_shape = 2
+
+[node name="Button3" type="Button" parent="Control" unique_id=214922937]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 63.0
+offset_right = 724.0
+offset_bottom = 187.0
+mouse_default_cursor_shape = 2
+
+[node name="Button4" type="Button" parent="Control" unique_id=32063807]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 63.0
+offset_right = 884.0
+offset_bottom = 187.0
+mouse_default_cursor_shape = 2
+
+[node name="Button5" type="Button" parent="Control" unique_id=590833656]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 63.0
+offset_right = 1044.0
+offset_bottom = 187.0
+mouse_default_cursor_shape = 2
+
+[node name="Button6" type="Button" parent="Control" unique_id=290701220]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 63.0
+offset_right = 1204.0
+offset_bottom = 187.0
+mouse_default_cursor_shape = 2
+
+[node name="catnip" type="Sprite2D" parent="Control" unique_id=1322906649]
+visible = false
+position = Vector2(0, 130)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_p0hev")
+script = ExtResource("4_p0hev")
+id = "catnip"
+
+[node name="false_ticket" type="Sprite2D" parent="Control" unique_id=73742812]
+visible = false
+position = Vector2(350, 129)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_q38ey")
+script = ExtResource("4_p0hev")
+id = "false_ticket"
+
+[node name="ticket" type="Sprite2D" parent="Control" unique_id=2003456003]
+visible = false
+position = Vector2(350, 129)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_etbpg")
+script = ExtResource("4_p0hev")
+id = "ticket"
+
+[node name="nails" type="Sprite2D" parent="Control" unique_id=875297870]
+visible = false
+position = Vector2(350, 129)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_2m21g")
+script = ExtResource("4_p0hev")
+id = "nails"
+
+[node name="book1" type="Sprite2D" parent="Control" unique_id=26560444]
+visible = false
+position = Vector2(350, 129)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_xqftv")
+script = ExtResource("4_p0hev")
+id = "book1"
+
+[node name="book2" type="Sprite2D" parent="Control" unique_id=458466850]
+visible = false
+position = Vector2(350, 129)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_xmnox")
+script = ExtResource("4_p0hev")
+id = "book2"
+
+[node name="book3" type="Sprite2D" parent="Control" unique_id=485217892]
+visible = false
+position = Vector2(350, 129)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_ut6yb")
+script = ExtResource("4_p0hev")
+id = "book3"
+
+[node name="book4" type="Sprite2D" parent="Control" unique_id=1859240294]
+visible = false
+position = Vector2(350, 129)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_8jl1d")
+script = ExtResource("4_p0hev")
+id = "book4"
+
+[node name="contact lens" type="Sprite2D" parent="Control" unique_id=1148052943]
+visible = false
+position = Vector2(350, 129)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_fylby")
+script = ExtResource("4_p0hev")
+id = "contact lens"
+
+[node name="talisman" type="Sprite2D" parent="Control" unique_id=1045195202]
+visible = false
+position = Vector2(350, 129)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_63s8d")
+script = ExtResource("4_p0hev")
+id = "talisman"
+
+[node name="dreamcatcher" type="Sprite2D" parent="Control" unique_id=2092990245]
+visible = false
+position = Vector2(348.00003, 124)
+scale = Vector2(0.3970588, 0.39705884)
+texture = SubResource("AtlasTexture_0461f")
+script = ExtResource("4_p0hev")
+id = "dreamcatcher"
+
+[node name="paper" type="Sprite2D" parent="Control" unique_id=654104395]
+visible = false
+position = Vector2(340, 130)
+scale = Vector2(0.325, 0.32500002)
+texture = SubResource("AtlasTexture_spbj3")
+script = ExtResource("4_p0hev")
+id = "paper"
+
+[node name="TextureButton" type="Button" parent="." unique_id=422517061]
+modulate = Color(1, 1, 1, 0)
+offset_left = 45.0
+offset_top = 20.0
+offset_right = 234.0
+offset_bottom = 201.0
+mouse_default_cursor_shape = 2
+
+[node name="Lineferme" type="Line2D" parent="." unique_id=987262865]
+points = PackedVector2Array(50, 172, 88, 192, 132, 200, 181, 193, 210, 176, 230, 154, 235, 97, 231, 63, 224, 40, 186, 26, 139, 16, 100, 24, 57, 41, 48, 75, 44, 113, 45, 156, 53, 175)
+
+[node name="Lineouvert" type="Line2D" parent="." unique_id=1156187071]
+points = PackedVector2Array(50, 172, 88, 192, 132, 200, 181, 193, 210, 176, 230, 154, 235, 97, 259, 76, 245, 58, 224, 40, 186, 26, 139, 16, 100, 24, 50, 44, 28, 69, 15, 88, 10, 102, 44, 113, 45, 156, 53, 175)
+
+[node name="fermé" type="Sprite2D" parent="." unique_id=1104084132]
+position = Vector2(130, 105.00001)
+scale = Vector2(0.71452695, 0.714527)
+texture = SubResource("AtlasTexture_tqoft")
+
+[node name="ouvert" type="Sprite2D" parent="." unique_id=1326166198]
+position = Vector2(130, 105.00001)
+scale = Vector2(0.71452695, 0.714527)
+texture = SubResource("AtlasTexture_jr0f2")
+
+[node name="opensound" type="AudioStreamPlayer" parent="." unique_id=1507848864]
+stream = ExtResource("5_2m21g")
+
+[node name="closesound" type="AudioStreamPlayer" parent="." unique_id=1240416868]
+stream = ExtResource("6_xqftv")
+
+[node name="newitem" type="AudioStreamPlayer" parent="." unique_id=1124258503]
+stream = ExtResource("7_xmnox")
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Control/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Control/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

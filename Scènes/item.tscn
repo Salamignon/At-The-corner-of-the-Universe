@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://mm3fxe5tbi12"]
+
+[ext_resource type="PackedScene" uid="uid://bahvqkpnr3m6t" path="res://Scènes/Interactible.tscn" id="1_tukr7"]
+[ext_resource type="Script" uid="uid://brsfpe61hk5ph" path="res://Scripts/item.gd" id="1_w06n6"]
+
+[node name="Node2D" type="Node2D" unique_id=453130203]
+script = ExtResource("1_w06n6")
+
+[node name="Area2D" parent="." unique_id=711194437 instance=ExtResource("1_tukr7")]
+scale = Vector2(0.32, 0.32)
+id = "item"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=634666434]
+scale = Vector2(0.453125, 0.453125)
+
+[connection signal="interact" from="Area2D" to="." method="_on_area_2d_interact"]
+[connection signal="look_at" from="Area2D" to="." method="_on_area_2d_look_at"]
+[connection signal="pick_up" from="Area2D" to="." method="_on_area_2d_pick_up"]
