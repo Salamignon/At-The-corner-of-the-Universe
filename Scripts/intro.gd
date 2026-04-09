@@ -23,7 +23,7 @@ func _on_timer_timeout() -> void:
 		$carte.hide()
 		$temple.show()
 	elif line_to_read == 3:
-		$texte.text = "Some even say that there is a creature that lives in this temple. A nymph capable of fulfilling very wish that we can
+		$texte.text = "Some even say that there is a creature that lives in this temple. A nymph capable of fulfilling every wish that we can
 		think of."
 		$temple.hide()
 		$nymphe.show()
